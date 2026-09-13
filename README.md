@@ -34,7 +34,7 @@ uname -m
 - `x86_64`: use the **amd64 deb** or **x86_64 AppImage**. These names describe the same CPU architecture.
 - `aarch64` or `arm64`: use **arm64**.
 
-Version 0.6.0 does not include an Intel Mac or Windows installer. Linux installation checks were performed on Ubuntu 24.04; other distributions may need different system packages. A Linux graphical desktop session is needed for the desktop UI.
+**Windows is not supported.** Version 0.6.0 also does not include an Intel Mac installer. Linux installation checks were performed on Ubuntu 24.04; other distributions may need different system packages. A Linux graphical desktop session is needed for the desktop UI.
 
 Download the named assets under **Assets** on the release page. GitHub's automatic **Source code (zip)** and **Source code (tar.gz)** links are not application installers.
 
@@ -229,11 +229,56 @@ markitdown --help
 
 Then restart Research Pilot and rerun Environment check. The [uv tools guide](https://docs.astral.sh/uv/guides/tools/) explains tool isolation and executable paths; avoid modifying your system Python with `sudo pip install`.
 
-### Literature and full-text services
+### Recommended API setup
 
-Open **Settings → Literature & full-text** to configure the sources you use. The app exposes fields for Semantic Scholar, OpenAlex, Paperclip, and Hugging Face credentials, plus an OpenAlex contact email.
+You can install Research Pilot and browse saved material before adding API keys. For online research, we recommend this starting setup:
 
-You do not need to configure every service before starting. Network searches and full-text retrieval depend on the selected provider, its access requirements, and the paper's availability. If a search reports an authentication or rate-limit error, check that source's settings and retry. Literature-source keys belong in this section; PI model-provider keys belong in **PI Agent**.
+1. **OpenAlex API key + contact email**, then **Semantic Scholar API key**, for literature discovery, metadata, and open-access full-text lookup.
+2. **Brave Search API key if you use PI Agent for general web research**, plus one working model-provider key or a supported local Claude/Codex login. You do not need keys for every model provider.
+3. Add **Hugging Face** for frequent ML/AI paper searches and **Paperclip** for additional DOI, PubMed, and PMC full-text retrieval.
+
+#### Literature discovery and full text
+
+Enter these values in **Settings → Literature & full-text**, then click **Save**. The names below match the app's fields; the identifiers in parentheses help when diagnosing configuration problems.
+
+| Priority | Field | How it helps / behavior without it | Where to get it |
+| --- | --- | --- | --- |
+| Recommended first | **OpenAlex API key** (`OPENALEX_API_KEY`) | Supports broad literature search, paper metadata, and finding open-access locations. A free key increases the daily request budget and enables usage tracking; anonymous access has a smaller budget. | Create an [OpenAlex account and copy its API key](https://openalex.org/settings/api). See [OpenAlex authentication and limits](https://help.openalex.org/api/authentication/). |
+| Recommended alongside OpenAlex | **OpenAlex contact email** (`PIPILOT_OPENALEX_MAILTO`) | Enter a valid contact email. Research Pilot sends it with OpenAlex requests and also uses it to enable **Unpaywall** lookup for open-access DOI PDFs. Without an email, the Unpaywall step is skipped. This is an email address, not an API key, and does not replace the OpenAlex key. | Use your own contact email; no separate Unpaywall key is needed. |
+| Recommended for regular literature searches | **Semantic Scholar API key** (`SEMANTIC_SCHOLAR_API_KEY`) | Supports paper discovery and metadata enrichment with authenticated access. Anonymous requests share more constrained access and may be throttled. | Request a key from the [Semantic Scholar API page](https://www.semanticscholar.org/product/api); approved keys are delivered by email. See its [API access guidance](https://webflow.semanticscholar.org/product/api). |
+| Useful for ML/AI researchers | **Hugging Face token** (`HF_TOKEN`) | Authenticates searches of Hugging Face Papers, a curated ML/AI paper source. Anonymous search remains available subject to provider limits. This field is for paper discovery, not model inference. | Create a token in [Hugging Face settings](https://huggingface.co/settings/tokens). Paper search does not need repository write access; see the [token permissions guide](https://huggingface.co/docs/hub/en/security-tokens). |
+| Useful for additional full-text coverage | **Paperclip API key** (`PAPERCLIP_API_KEY`) | Enables Research Pilot's Paperclip resolver for DOI, PubMed, and PMC identifiers. Without it, Paperclip is skipped; arXiv and supported open-access DOI retrieval can still work. Coverage varies by paper. | Sign in to [Paperclip API Keys](https://paperclip.gxl.ai/keys) and create a key. |
+
+Leave **Paperclip endpoint** (`PIPILOT_PAPERCLIP_URL`) blank to use the default `https://paperclip.gxl.ai/mcp`. Change it only when you have a specific alternative Paperclip endpoint.
+
+These services help discover and retrieve available research material; credentials do not guarantee that every paper has accessible full text. PDF retrieval may still need the optional converter described above.
+
+#### General web search for PI Agent
+
+For PI Agent to search websites beyond academic indexes, configure **Settings → PI Agent → Brave Search key** (`BRAVE_API_KEY`). We strongly recommend this for research involving current websites, project documentation, or other non-paper sources.
+
+Create an account in the [Brave Search API dashboard](https://api-dashboard.search.brave.com/), activate a suitable Search API plan, and create an API key as described in [Brave's authentication guide](https://api-dashboard.search.brave.com/documentation/guides/authentication). Paste it into the app and click **Save**.
+
+Without this key, PI's `web_search` reports that general web search is unavailable. Academic literature search remains a separate capability. Claude Code and Codex sessions use their host's web tools; this setting configures PI Agent.
+
+#### Model-provider credentials for PI Agent
+
+PI Agent also needs access to a language model. If **Settings → PI Agent** detects a supported local Claude/Codex login that works with your selected model, you can use that authentication. Otherwise, configure **one** of the provider keys below and choose an available model for that provider.
+
+| Model family | Field in Settings → PI Agent | Get a key |
+| --- | --- | --- |
+| Claude | **Anthropic API key** (`ANTHROPIC_API_KEY`) | [Anthropic Console keys](https://console.anthropic.com/settings/keys); [API setup documentation](https://platform.claude.com/docs/en/api/overview). |
+| OpenAI | **OpenAI API key** (`OPENAI_API_KEY`) | [OpenAI API keys](https://platform.openai.com/api-keys); use a standard application API key as described in the [API authentication documentation](https://developers.openai.com/api/reference/overview#authentication). |
+| Gemini | **Google API key** (`GOOGLE_API_KEY`) | [Google AI Studio](https://aistudio.google.com/apikey); follow the [Gemini API key setup](https://ai.google.dev/gemini-api/docs/api-key). |
+| DeepSeek | **DeepSeek API key** (`DEEPSEEK_API_KEY`) | [DeepSeek platform](https://platform.deepseek.com/); follow the [API getting-started guide](https://api-docs.deepseek.com/). |
+
+Click **Save**, select a model available to your account, and try a short PI conversation. Configure standalone Claude Code or Codex authentication using the CLI instructions in section 3. Literature-source keys do not authenticate a language model, and a model-provider key does not enable Brave Search.
+
+#### Check your setup
+
+Start with small requests: search for a few papers on a familiar topic, fetch the full text of one known open-access paper, and, if you enabled Brave, ask PI to search the web for a project's official documentation. A successful literature search does not by itself verify full-text retrieval or general web search.
+
+For authentication errors, check the key and selected provider. For rate-limit or quota errors, check that provider's usage dashboard and plan. Provider access, quotas, and charges are controlled by the provider and may change; check the linked official pages before choosing a paid plan. Enter credentials in the app's Settings, not in project files or GitHub issues.
 
 ## 6. Upgrade, data location, and uninstall
 
