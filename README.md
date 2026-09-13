@@ -6,6 +6,11 @@
 
 This public repository distributes installation packages and hosts community issues. The application source is maintained separately. You do **not** need to clone a repository, build the app, install Docker, or start a server manually to use the packaged application.
 
+> [!IMPORTANT]
+> **Download an application package, not GitHub's “Source code” archives.**
+> This is a binary-distribution repository; the application source code is private and is not published here. GitHub automatically adds **Source code (zip)** and **Source code (tar.gz)** links to releases. For **v0.6.0**, those archives contain only this repository's `README.md` snapshot — no application source code and no installer.
+> Choose a **`Research-Pilot-0.6.0-…`** package from the download table below. The **`Research-Pilot-0.6.0-mac-arm64.zip`** asset is a packaged macOS application and is different from GitHub's **Source code (zip)**.
+
 ## Installation at a glance
 
 1. Download the package for your operating system and CPU from the table below.
@@ -36,7 +41,7 @@ uname -m
 
 **Windows is not supported.** Version 0.6.0 also does not include an Intel Mac installer. Linux installation checks were performed on Ubuntu 24.04; other distributions may need different system packages. A Linux graphical desktop session is needed for the desktop UI.
 
-Download the named assets under **Assets** on the release page. GitHub's automatic **Source code (zip)** and **Source code (tar.gz)** links are not application installers.
+On the release page, choose one of the six **`Research-Pilot-0.6.0-…`** assets listed above. GitHub's automatic **Source code (zip)** and **Source code (tar.gz)** entries contain only a README snapshot for this release; they do not contain the application source or an installer.
 
 ## 2. Install Research Pilot
 
