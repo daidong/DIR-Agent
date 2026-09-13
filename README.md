@@ -31,12 +31,18 @@ security prompts on first launch.
 sudo apt install ./Research-Pilot-<version>-linux-<arch>.deb
 ```
 
-Installs to `/opt/Research Pilot`; the Chromium sandbox is configured
-automatically (works on Ubuntu 24.04).
+Installs to `/opt/Research-Pilot`.
 
-**AppImage** — `chmod +x` the file and run it. Requires `libfuse2`
-(`sudo apt install libfuse2`). On Ubuntu 24.04, if it fails to start, launch
-with `--no-sandbox` — or prefer the deb.
+**AppImage** — `chmod +x` the file and run it. On Ubuntu 24.04 install
+`libfuse2t64`; **arm64 also needs `zlib1g-dev`** for the bundled runtime:
+
+```bash
+sudo apt install libfuse2t64 zlib1g-dev
+```
+
+On older Ubuntu releases the FUSE package is called `libfuse2`. If the
+Chromium sandbox prevents startup, launch with `--no-sandbox` — or prefer
+the deb.
 
 ## Prerequisites
 
