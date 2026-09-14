@@ -323,7 +323,47 @@ For a backup, finish active tasks and close the app and agents using the data, t
 
 Removing the application is separate from deleting `~/.pipilot` or your workspace folders. Keep those directories if you want to retain your research for reinstallation.
 
-## 7. Troubleshooting
+## 7. Optional: follow and drive sessions from your phone
+
+Research Pilot can share its running agent sessions with your iPhone or iPad. The desktop app serves a small web app to the phone; the phone is only a window. Agents, files, and research data stay on your computer, so the desktop app must remain open while you use the phone.
+
+From the phone you can select a workspace, start **Claude**, **Codex**, or **PIAgent**, follow a live session as it streams, send prompts into the running agent, answer approval questions, and browse the workspace's **Files**, **Literature**, **Knowledge**, **Recap**, and **Research** views. Optional push notifications tell you when an agent has replied.
+
+This feature is off by default.
+
+### Why Tailscale
+
+[Tailscale](https://tailscale.com/) creates a private network between your own devices. Research Pilot uses it in two ways:
+
+- The phone gateway listens only on your computer's Tailscale address, so it is reachable from your other Tailscale devices and from nowhere else. It works at home, on campus Wi-Fi, or on cellular data, without opening ports on your router.
+- Tailscale issues a real HTTPS certificate for your computer's Tailscale name. iOS requires HTTPS for **Add to Home Screen** app installs and for push notifications. Without it the phone can still read sessions over plain HTTP, but install and notifications do not work.
+
+Tailscale's free personal plan is sufficient. Install it on both devices and sign in with the **same account**:
+
+- Computer: [Tailscale download page](https://tailscale.com/download), which offers macOS and Linux packages.
+- iPhone or iPad: [Tailscale on the App Store](https://apps.apple.com/us/app/tailscale/id1470499037).
+
+For HTTPS, two settings in the [Tailscale admin console](https://login.tailscale.com/admin/dns) must be enabled under **DNS**: **MagicDNS** and **HTTPS Certificates**. New tailnets usually have MagicDNS on already; HTTPS Certificates is a one-time switch. If they are off, Research Pilot falls back to HTTP and reports this in Settings.
+
+### Connect your phone
+
+1. Make sure Tailscale is connected on both the computer and the phone.
+2. In Research Pilot, open **Settings → Phone (iOS companion)** and turn on **Share sessions to your phone**.
+3. Check the status line. It should read **HTTPS, Tailscale**. If it reads **no Tailscale**, the app could not find the Tailscale command; confirm Tailscale is installed and running, then toggle the switch again. If it reads **HTTP**, check the two DNS settings above.
+4. Scan the QR code with the phone's camera, or use **Copy link** and send the link to yourself. The link contains the access token and pairs the phone on first open.
+5. On the phone, use **Share → Add to Home Screen**, then open Research Pilot from its icon for a full-screen view. Open the phone app's menu and choose **Enable push notifications** if you want reply alerts.
+
+Pairing is per computer. Repeat these steps if you install Research Pilot on another machine.
+
+### Access and security
+
+- The pairing link is a credential. Anyone who has it can read your sessions and drive your agents, which run with full permissions as described in section 3. Do not post the link or the token publicly.
+- **New token** in the Phone settings invalidates every paired phone. Use it if a link was shared by mistake, then scan the new QR code.
+- **LAN mode (unencrypted)** appears only when Tailscale is not detected. It serves plain HTTP on your local network with no encryption, and anyone on that network with the link can connect. It is a fallback for networks you fully trust, not a substitute for Tailscale.
+- The gateway uses port 8788 on your computer. Nothing is sent to a cloud service; push notifications go through Apple's push service as encrypted messages that contain only the agent name and the session title, not the conversation.
+- The phone app was designed and tested with Safari on iPhone and iPad. Other phones may be able to read sessions in a browser, but install and notification behavior there is not verified.
+
+## 8. Troubleshooting
 
 | Symptom | What to check |
 |---|---|
@@ -335,6 +375,9 @@ Removing the application is separate from deleting `~/.pipilot` or your workspac
 | arm64 AppImage reports `libz.so` missing | Install `zlib1g-dev`, or use the arm64 deb. |
 | Chromium sandbox prevents AppImage startup | Prefer the deb; the `--no-sandbox` launch fallback is described above. |
 | Data daemon or terminal engine check fails | Restart the application and rerun **Settings → Environment check**. If it persists, reinstall the correct package and collect diagnostics. |
+| Phone settings report `no Tailscale` | Confirm Tailscale is installed and connected on your computer, then toggle **Share sessions to your phone** off and on. Without it, only LAN mode can serve the phone. |
+| Phone settings report `HTTP` instead of `HTTPS` | In the [Tailscale admin DNS page](https://login.tailscale.com/admin/dns), enable **MagicDNS** and **HTTPS Certificates**, then toggle the phone switch again. Reading sessions works over HTTP; Add to Home Screen and push notifications need HTTPS. |
+| Phone shows a pairing screen again | The access token changed, or **New token** was used. Reopen Settings → Phone and scan the current QR code or copy the current link. |
 | Python or MarkItDown is missing | These affect the optional features described above. Install the tool you need, reopen the app, and click **Recheck**. |
 | Literature search fails or returns limited results | Inspect the provider error and its credentials/rate limits in **Literature & full-text**. Full-text availability varies by paper. |
 
