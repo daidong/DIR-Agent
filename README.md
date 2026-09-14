@@ -1,6 +1,6 @@
 # Research Pilot · DIR-Agent
 
-**Research Pilot** is a desktop workspace for research with Claude Code, OpenAI Codex CLI, and the built-in PI agent. It brings together literature search, a Paper Wiki, notes, conversation history, research runs, and a file browser/editor.
+**Research Pilot** is a desktop workspace for research with Claude Code, OpenAI Codex CLI, and the built-in PI agent. It brings together literature search, a Paper Wiki, notes, conversation history, research runs, and a file browser/editor. An optional companion lets you follow and drive the same sessions from your iPhone or iPad over [Tailscale](https://tailscale.com/); see [section 7](#7-optional-follow-and-drive-sessions-from-your-phone).
 
 **[Download the latest release](https://github.com/daidong/DIR-Agent/releases/latest)** · **[0.6.5 release notes](https://github.com/daidong/DIR-Agent/releases/tag/v0.6.5)** · **[Report a problem](https://github.com/daidong/DIR-Agent/issues)**
 
@@ -17,6 +17,7 @@ This public repository distributes installation packages and hosts community iss
 2. Install Research Pilot: drag it into Applications on macOS, or install the deb on Ubuntu/Debian.
 3. To use the **Claude** or **Codex** tab, install the corresponding **CLI** and sign in once in a terminal. You can install either or both.
 4. Open Research Pilot, run **Settings → Environment check**, then choose **Open Folder…** and select a research project folder.
+5. Optional: to follow sessions from your phone, install Tailscale on both devices and turn on **Settings → Phone (iOS companion)**.
 
 The desktop app includes its own Electron/Node.js runtime and research data service. **A separate Node.js installation is not required for Research Pilot itself.** The CLI installation methods below also use standalone installers; if you choose an upstream npm installation method instead, that method requires npm/Node.js.
 
