@@ -1,0 +1,8 @@
+flowchart TD
+  Q["Describe the research question"] -->|"Generate"| P["Read the proposed plan"]
+  P -->|"Request changes"| R["Revise the plan"]
+  R -->|"Review the new version"| P
+  P -->|"Approve & start"| X["Investigate, compare designs and run work"]
+  X -->|"Inspect evidence"| V["Review results and unresolved questions"]
+  V -->|"More work needed"| X
+  V -->|"Record the outcome"| O["Report with evidence and limitations"]

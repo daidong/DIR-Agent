@@ -1,0 +1,7 @@
+flowchart TD
+  Q["Your question and project files"] -->|"Work with"| A["Claude · Codex · PI Agent"]
+  A -->|"Find and inspect"| E["Papers and source evidence"]
+  A -->|"Create and revise"| O["Code · reports · slides · experiments"]
+  E -->|"Save useful knowledge"| K["Wiki · notes · project memory"]
+  O -->|"Record decisions and results"| K
+  K -.->|"Consult in later sessions"| A
