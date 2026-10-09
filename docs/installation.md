@@ -1,4 +1,4 @@
-# Install and configure Research Pilot 0.8.0
+# Install and configure Research Pilot 0.8.1
 
 [Back to the product overview](../README.md)
 
@@ -6,13 +6,13 @@ Use only the sections relevant to your setup. PI Agent, Claude Code and Codex ar
 
 ## 1. Choose the right download
 
-The filenames and direct links below are for **0.8.0**. For later releases, use the [latest release page](https://github.com/daidong/DIR-Agent/releases/latest) and substitute that version in the commands.
+The filenames and direct links below are for **0.8.1**. For later releases, use the [latest release page](https://github.com/daidong/DIR-Agent/releases/latest) and substitute that version in the commands.
 
 | Your computer | Recommended download | Alternative |
 |---|---|---|
-| macOS, Apple Silicon (M-series) | [mac-arm64.dmg](https://github.com/daidong/DIR-Agent/releases/download/v0.8.0/Research-Pilot-0.8.0-mac-arm64.dmg) | [mac-arm64.zip](https://github.com/daidong/DIR-Agent/releases/download/v0.8.0/Research-Pilot-0.8.0-mac-arm64.zip) |
-| Ubuntu/Debian, Intel or AMD 64-bit | [linux-amd64.deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.0/Research-Pilot-0.8.0-linux-amd64.deb) | [linux-x86_64.AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.0/Research-Pilot-0.8.0-linux-x86_64.AppImage) |
-| Ubuntu/Debian, ARM 64-bit | [linux-arm64.deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.0/Research-Pilot-0.8.0-linux-arm64.deb) | [linux-arm64.AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.0/Research-Pilot-0.8.0-linux-arm64.AppImage) |
+| macOS, Apple Silicon (M-series) | [mac-arm64.dmg](https://github.com/daidong/DIR-Agent/releases/download/v0.8.1/Research-Pilot-0.8.1-mac-arm64.dmg) | [mac-arm64.zip](https://github.com/daidong/DIR-Agent/releases/download/v0.8.1/Research-Pilot-0.8.1-mac-arm64.zip) |
+| Ubuntu/Debian, Intel or AMD 64-bit | [linux-amd64.deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.1/Research-Pilot-0.8.1-linux-amd64.deb) | [linux-x86_64.AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.1/Research-Pilot-0.8.1-linux-x86_64.AppImage) |
+| Ubuntu/Debian, ARM 64-bit | [linux-arm64.deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.1/Research-Pilot-0.8.1-linux-arm64.deb) | [linux-arm64.AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.1/Research-Pilot-0.8.1-linux-arm64.AppImage) |
 
 **Not sure about your CPU?** On macOS, open **Apple menu → About This Mac** and look at **Chip**. On Linux, run:
 
@@ -23,15 +23,15 @@ uname -m
 - `x86_64`: use the **amd64 deb** or **x86_64 AppImage**. These names describe the same CPU architecture.
 - `aarch64` or `arm64`: use **arm64**.
 
-**Windows is not supported.** Version 0.8.0 also does not include an Intel Mac installer. Linux installation checks were performed on Ubuntu 24.04; other distributions may need different system packages. A Linux graphical desktop session is needed for the desktop UI.
+**Windows is not supported.** Version 0.8.1 also does not include an Intel Mac installer. Linux installation checks were performed on Ubuntu 24.04; other distributions may need different system packages. A Linux graphical desktop session is needed for the desktop UI.
 
-On the release page, choose one of the six **`Research-Pilot-0.8.0-…`** assets listed above. GitHub's automatic **Source code (zip)** and **Source code (tar.gz)** entries contain only a README snapshot for this release; they do not contain the application source or an installer.
+On the release page, choose one of the six **`Research-Pilot-0.8.1-…`** assets listed above. GitHub's automatic **Source code (zip)** and **Source code (tar.gz)** entries contain only a README snapshot for this release; they do not contain the application source or an installer.
 
 ## 2. Install Research Pilot
 
 ### macOS: Apple Silicon
 
-1. Download `Research-Pilot-0.8.0-mac-arm64.dmg`.
+1. Download `Research-Pilot-0.8.1-mac-arm64.dmg`.
 2. Double-click the dmg to open it.
 3. Drag **Research Pilot** into **Applications**.
 4. Eject the mounted disk image.
@@ -50,7 +50,7 @@ For **x86_64 / amd64**:
 ```bash
 cd ~/Downloads
 sudo apt update
-sudo apt install ./Research-Pilot-0.8.0-linux-amd64.deb
+sudo apt install ./Research-Pilot-0.8.1-linux-amd64.deb
 ```
 
 For **arm64**:
@@ -58,7 +58,7 @@ For **arm64**:
 ```bash
 cd ~/Downloads
 sudo apt update
-sudo apt install ./Research-Pilot-0.8.0-linux-arm64.deb
+sudo apt install ./Research-Pilot-0.8.1-linux-arm64.deb
 ```
 
 Use **one** of these blocks. Keep the `./` before the filename: it tells apt to install the downloaded local file. Using apt also resolves the declared system dependencies.
@@ -91,22 +91,22 @@ sudo apt update
 sudo apt install libfuse2t64 zlib1g-dev
 ```
 
-On older Ubuntu releases, the FUSE package is named `libfuse2` rather than `libfuse2t64`. The 0.8.0 arm64 AppImage additionally requires `zlib1g-dev` because its bundled runtime looks for `libz.so`; installing `zlib1g` alone does not provide that filename.
+On older Ubuntu releases, the FUSE package is named `libfuse2` rather than `libfuse2t64`. The 0.8.1 arm64 AppImage additionally requires `zlib1g-dev` because its bundled runtime looks for `libz.so`; installing `zlib1g` alone does not provide that filename.
 
 Then make the downloaded file executable and run it. For **x86_64**:
 
 ```bash
 cd ~/Downloads
-chmod +x Research-Pilot-0.8.0-linux-x86_64.AppImage
-./Research-Pilot-0.8.0-linux-x86_64.AppImage
+chmod +x Research-Pilot-0.8.1-linux-x86_64.AppImage
+./Research-Pilot-0.8.1-linux-x86_64.AppImage
 ```
 
 For **arm64**:
 
 ```bash
 cd ~/Downloads
-chmod +x Research-Pilot-0.8.0-linux-arm64.AppImage
-./Research-Pilot-0.8.0-linux-arm64.AppImage
+chmod +x Research-Pilot-0.8.1-linux-arm64.AppImage
+./Research-Pilot-0.8.1-linux-arm64.AppImage
 ```
 
 If startup fails specifically because of Chromium's sandbox on Ubuntu 24.04, prefer the deb. An AppImage fallback is to append `--no-sandbox` to the launch command; this disables Chromium's sandbox for that launch.
@@ -114,7 +114,7 @@ If startup fails specifically because of Chromium's sandbox on Ubuntu 24.04, pre
 If FUSE is unavailable, you can extract the AppImage and run its contents. For example, in a directory where you want to keep the application:
 
 ```bash
-/path/to/Research-Pilot-0.8.0-linux-arm64.AppImage --appimage-extract
+/path/to/Research-Pilot-0.8.1-linux-arm64.AppImage --appimage-extract
 ./squashfs-root/research-pilot
 ```
 
