@@ -1,4 +1,4 @@
-# Install and configure Research Pilot 0.8.1
+# Install and configure Research Pilot 0.8.2
 
 [Back to the product overview](../README.md)
 
@@ -6,13 +6,13 @@ Use only the sections relevant to your setup. PI Agent, Claude Code and Codex ar
 
 ## 1. Choose the right download
 
-The filenames and direct links below are for **0.8.1**. For later releases, use the [latest release page](https://github.com/daidong/DIR-Agent/releases/latest) and substitute that version in the commands.
+The filenames and direct links below are for **0.8.2**. For later releases, use the [latest release page](https://github.com/daidong/DIR-Agent/releases/latest) and substitute that version in the commands.
 
 | Your computer | Recommended download | Alternative |
 |---|---|---|
-| macOS, Apple Silicon (M-series) | [mac-arm64.dmg](https://github.com/daidong/DIR-Agent/releases/download/v0.8.1/Research-Pilot-0.8.1-mac-arm64.dmg) | [mac-arm64.zip](https://github.com/daidong/DIR-Agent/releases/download/v0.8.1/Research-Pilot-0.8.1-mac-arm64.zip) |
-| Ubuntu/Debian, Intel or AMD 64-bit | [linux-amd64.deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.1/Research-Pilot-0.8.1-linux-amd64.deb) | [linux-x86_64.AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.1/Research-Pilot-0.8.1-linux-x86_64.AppImage) |
-| Ubuntu/Debian, ARM 64-bit | [linux-arm64.deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.1/Research-Pilot-0.8.1-linux-arm64.deb) | [linux-arm64.AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.1/Research-Pilot-0.8.1-linux-arm64.AppImage) |
+| macOS, Apple Silicon (M-series) | [mac-arm64.dmg](https://github.com/daidong/DIR-Agent/releases/download/v0.8.2/Research-Pilot-0.8.2-mac-arm64.dmg) | [mac-arm64.zip](https://github.com/daidong/DIR-Agent/releases/download/v0.8.2/Research-Pilot-0.8.2-mac-arm64.zip) |
+| Ubuntu/Debian, Intel or AMD 64-bit | [linux-amd64.deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.2/Research-Pilot-0.8.2-linux-amd64.deb) | [linux-x86_64.AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.2/Research-Pilot-0.8.2-linux-x86_64.AppImage) |
+| Ubuntu/Debian, ARM 64-bit | [linux-arm64.deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.2/Research-Pilot-0.8.2-linux-arm64.deb) | [linux-arm64.AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.2/Research-Pilot-0.8.2-linux-arm64.AppImage) |
 
 **Not sure about your CPU?** On macOS, open **Apple menu → About This Mac** and look at **Chip**. On Linux, run:
 
@@ -23,15 +23,15 @@ uname -m
 - `x86_64`: use the **amd64 deb** or **x86_64 AppImage**. These names describe the same CPU architecture.
 - `aarch64` or `arm64`: use **arm64**.
 
-**Windows is not supported.** Version 0.8.1 also does not include an Intel Mac installer. Linux installation checks were performed on Ubuntu 24.04; other distributions may need different system packages. A Linux graphical desktop session is needed for the desktop UI.
+**Windows is not supported.** Version 0.8.2 also does not include an Intel Mac installer. Linux installation checks were performed on Ubuntu 24.04; other distributions may need different system packages. A Linux graphical desktop session is needed for the desktop UI.
 
-On the release page, choose one of the six **`Research-Pilot-0.8.1-…`** assets listed above. GitHub's automatic **Source code (zip)** and **Source code (tar.gz)** entries contain only a README snapshot for this release; they do not contain the application source or an installer.
+On the release page, choose one of the six **`Research-Pilot-0.8.2-…`** assets listed above. GitHub's automatic **Source code (zip)** and **Source code (tar.gz)** entries contain the public documentation snapshot for this release; they do not contain the application source or an installer.
 
 ## 2. Install Research Pilot
 
 ### macOS: Apple Silicon
 
-1. Download `Research-Pilot-0.8.1-mac-arm64.dmg`.
+1. Download `Research-Pilot-0.8.2-mac-arm64.dmg`.
 2. Double-click the dmg to open it.
 3. Drag **Research Pilot** into **Applications**.
 4. Eject the mounted disk image.
@@ -50,7 +50,7 @@ For **x86_64 / amd64**:
 ```bash
 cd ~/Downloads
 sudo apt update
-sudo apt install ./Research-Pilot-0.8.1-linux-amd64.deb
+sudo apt install ./Research-Pilot-0.8.2-linux-amd64.deb
 ```
 
 For **arm64**:
@@ -58,7 +58,7 @@ For **arm64**:
 ```bash
 cd ~/Downloads
 sudo apt update
-sudo apt install ./Research-Pilot-0.8.1-linux-arm64.deb
+sudo apt install ./Research-Pilot-0.8.2-linux-arm64.deb
 ```
 
 Use **one** of these blocks. Keep the `./` before the filename: it tells apt to install the downloaded local file. Using apt also resolves the declared system dependencies.
@@ -91,22 +91,22 @@ sudo apt update
 sudo apt install libfuse2t64 zlib1g-dev
 ```
 
-On older Ubuntu releases, the FUSE package is named `libfuse2` rather than `libfuse2t64`. The 0.8.1 arm64 AppImage additionally requires `zlib1g-dev` because its bundled runtime looks for `libz.so`; installing `zlib1g` alone does not provide that filename.
+On older Ubuntu releases, the FUSE package is named `libfuse2` rather than `libfuse2t64`. The 0.8.2 arm64 AppImage additionally requires `zlib1g-dev` because its bundled runtime looks for `libz.so`; installing `zlib1g` alone does not provide that filename.
 
 Then make the downloaded file executable and run it. For **x86_64**:
 
 ```bash
 cd ~/Downloads
-chmod +x Research-Pilot-0.8.1-linux-x86_64.AppImage
-./Research-Pilot-0.8.1-linux-x86_64.AppImage
+chmod +x Research-Pilot-0.8.2-linux-x86_64.AppImage
+./Research-Pilot-0.8.2-linux-x86_64.AppImage
 ```
 
 For **arm64**:
 
 ```bash
 cd ~/Downloads
-chmod +x Research-Pilot-0.8.1-linux-arm64.AppImage
-./Research-Pilot-0.8.1-linux-arm64.AppImage
+chmod +x Research-Pilot-0.8.2-linux-arm64.AppImage
+./Research-Pilot-0.8.2-linux-arm64.AppImage
 ```
 
 If startup fails specifically because of Chromium's sandbox on Ubuntu 24.04, prefer the deb. An AppImage fallback is to append `--no-sandbox` to the launch command; this disables Chromium's sandbox for that launch.
@@ -114,7 +114,7 @@ If startup fails specifically because of Chromium's sandbox on Ubuntu 24.04, pre
 If FUSE is unavailable, you can extract the AppImage and run its contents. For example, in a directory where you want to keep the application:
 
 ```bash
-/path/to/Research-Pilot-0.8.1-linux-arm64.AppImage --appimage-extract
+/path/to/Research-Pilot-0.8.2-linux-arm64.AppImage --appimage-extract
 ./squashfs-root/research-pilot
 ```
 
@@ -303,7 +303,7 @@ Removing the application is separate from deleting `~/.pipilot` or your workspac
 
 Research Pilot can share its running agent sessions with your iPhone or iPad. The desktop app serves a small web app to the phone; the phone is only a window. Agents, files, and research data stay on your computer, so the desktop app must remain open while you use the phone.
 
-From the phone you can select a workspace, start **Claude**, **Codex**, or **PIAgent**, follow a live session as it streams, send prompts into the running agent, answer approval questions, and browse the workspace's **Files**, **Literature**, **Knowledge**, **Recap**, and **Research** views. Optional push notifications tell you when an agent has replied.
+From the phone you can select a workspace, start **Claude**, **Codex**, or **PIAgent**, follow a live session as it streams, send prompts into the running agent, answer approval questions, and browse project files, literature, knowledge and session history. The **Team** tab follows Research and Manuscript Teams and opens their assistant conversations. You can also pause or resume a resident researcher, request a briefing, or talk to its assistant. Optional push notifications tell you when an agent has replied.
 
 This feature is off by default.
 
@@ -326,16 +326,16 @@ For HTTPS, two settings in the [Tailscale admin console](https://login.tailscale
 1. Make sure Tailscale is connected on both the computer and the phone.
 2. In Research Pilot, open **Settings → Phone (iOS companion)** and turn on **Share sessions to your phone**.
 3. Check the status line. It should read **HTTPS, Tailscale**. If it reads **no Tailscale**, the app could not find the Tailscale command; confirm Tailscale is installed and running, then toggle the switch again. If it reads **HTTP**, check the two DNS settings above.
-4. Scan the QR code with the phone's camera, or use **Copy link** and send the link to yourself. The link contains the access token and pairs the phone on first open.
+4. Click **Show pairing code**. Scan the QR code with the phone's camera, or enter the six-digit code on the phone. Each code pairs one phone, once, within ten minutes.
 5. On the phone, use **Share → Add to Home Screen**, then open Research Pilot from its icon for a full-screen view. Open the phone app's menu and choose **Enable push notifications** if you want reply alerts.
 
 Pairing is per computer. Repeat these steps if you install Research Pilot on another machine.
 
 ### Access and security
 
-- The pairing link is a credential. Anyone who has it can read your sessions and drive your agents, which run with full permissions as described in section 3. Do not post the link or the token publicly.
-- **New token** in the Phone settings invalidates every paired phone. Use it if a link was shared by mistake, then scan the new QR code.
-- **LAN mode (unencrypted)** appears only when Tailscale is not detected. It serves plain HTTP on your local network with no encryption, and anyone on that network with the link can connect. It is a fallback for networks you fully trust, not a substitute for Tailscale.
+- The pairing code grants access to sessions and agent controls. Keep it private. Each paired phone receives its own access key.
+- Paired phones are listed in Phone settings. Remove a device there to revoke its access without disconnecting other phones.
+- **LAN mode (unencrypted)** appears only when Tailscale is not detected. It serves plain HTTP on your local network with no encryption, and any paired device on that network can connect. It is a fallback for networks you fully trust, not a substitute for Tailscale.
 - The gateway uses port 8788 on your computer. The gateway is served from your computer. Model and search requests still use their configured services; push notifications go through Apple's push service as encrypted messages that contain only the agent name and the session title, not the conversation.
 - The phone app was designed and tested with Safari on iPhone and iPad. Other phones may be able to read sessions in a browser, but install and notification behavior there is not verified.
 
@@ -353,7 +353,7 @@ Pairing is per computer. Repeat these steps if you install Research Pilot on ano
 | Data daemon or terminal engine check fails | Restart the application and rerun **Settings → Environment check**. If it persists, reinstall the correct package and collect diagnostics. |
 | Phone settings report `no Tailscale` | Confirm Tailscale is installed and connected on your computer, then toggle **Share sessions to your phone** off and on. Without it, only LAN mode can serve the phone. |
 | Phone settings report `HTTP` instead of `HTTPS` | In the [Tailscale admin DNS page](https://login.tailscale.com/admin/dns), enable **MagicDNS** and **HTTPS Certificates**, then toggle the phone switch again. Reading sessions works over HTTP; Add to Home Screen and push notifications need HTTPS. |
-| Phone shows a pairing screen again | The access token changed, or **New token** was used. Reopen Settings → Phone and scan the current QR code or copy the current link. |
+| Phone shows a pairing screen again | The device may have been revoked or its browser storage cleared. Reopen Settings → Phone, generate a new pairing code, and pair the device again. |
 | Python or MarkItDown is missing | These affect the optional features described above. Install the tool you need, reopen the app, and click **Recheck**. |
 | Literature search fails or returns limited results | Inspect the provider error and its credentials/rate limits in **Literature & full-text**. Full-text availability varies by paper. |
 

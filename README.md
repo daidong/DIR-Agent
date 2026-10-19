@@ -4,7 +4,7 @@
 
 Work on papers, code, experiments, and presentations in one project folder. Keep the papers you found, the decisions you made, and the evidence behind your results available when the conversation ends.
 
-[Download 0.8.1](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.1) · [Release notes](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.1) · [Report a problem](https://github.com/daidong/DIR-Agent/issues)
+[Download 0.8.2](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.2) · [Release notes](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.2) · [Report a problem](https://github.com/daidong/DIR-Agent/issues)
 
 ## What you can do
 
@@ -13,7 +13,7 @@ Work on papers, code, experiments, and presentations in one project folder. Keep
 | Read papers and compare evidence | Ask an agent; browse **Literature** and **Knowledge** | Saved papers, source links, Wiki pages and notes |
 | Write, code, or prepare slides | Open a project and use **Claude**, **Codex**, or **PIAgent** | Project files and session history |
 | Explore a research question over several steps | Create a plan in **Research**, revise it, then approve it | Plan versions, attempts, evidence, decisions and reports |
-| Continue a project next week | Reopen its workspace | Project memory and prior work, according to the selected mode |
+| Continue a project next week | Reopen its workspace | Project memory and prior work |
 | Follow work away from your desk | Pair the optional phone companion | The same computer-hosted sessions and research views |
 
 For example, ask: “Compare the methods in these three papers, find the strongest objection to my proposed experiment, and save a short plan with sources.” You can inspect the papers in Literature, revise the plan with the agent, and keep the resulting document in your project.
@@ -31,15 +31,19 @@ Try: “Explain this project and the research material already saved for it. Sug
 
 | Computer | Recommended package | Alternative |
 | --- | --- | --- |
-| macOS · Apple Silicon | [DMG](https://github.com/daidong/DIR-Agent/releases/download/v0.8.1/Research-Pilot-0.8.1-mac-arm64.dmg) | [ZIP](https://github.com/daidong/DIR-Agent/releases/download/v0.8.1/Research-Pilot-0.8.1-mac-arm64.zip) |
-| Ubuntu/Debian · Intel / AMD 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.1/Research-Pilot-0.8.1-linux-amd64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.1/Research-Pilot-0.8.1-linux-x86_64.AppImage) |
-| Ubuntu/Debian · ARM 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.1/Research-Pilot-0.8.1-linux-arm64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.1/Research-Pilot-0.8.1-linux-arm64.AppImage) |
+| macOS · Apple Silicon | [DMG](https://github.com/daidong/DIR-Agent/releases/download/v0.8.2/Research-Pilot-0.8.2-mac-arm64.dmg) | [ZIP](https://github.com/daidong/DIR-Agent/releases/download/v0.8.2/Research-Pilot-0.8.2-mac-arm64.zip) |
+| Ubuntu/Debian · Intel / AMD 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.2/Research-Pilot-0.8.2-linux-amd64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.2/Research-Pilot-0.8.2-linux-x86_64.AppImage) |
+| Ubuntu/Debian · ARM 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.2/Research-Pilot-0.8.2-linux-arm64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.2/Research-Pilot-0.8.2-linux-arm64.AppImage) |
 
-On macOS, open the DMG and drag Research Pilot into Applications. On Ubuntu/Debian, install the downloaded deb with `sudo apt install ./Research-Pilot-0.8.1-linux-amd64.deb` (use the arm64 filename on ARM).
+On macOS, open the DMG and drag Research Pilot into Applications. On Ubuntu/Debian, install the downloaded deb with `sudo apt install ./Research-Pilot-0.8.2-linux-amd64.deb` (use the arm64 filename on ARM).
 
 The app includes its runtime and data service. Packaged use does not need Node.js, Docker, a source checkout, or a manually started server. Windows and Intel Mac installers are not included. Choose a named application package; GitHub's automatic “Source code” archives are the public repository snapshot, not the application.
 
 [Detailed installation and setup](docs/installation.md) covers CLI login, AppImage dependencies, optional tools, API keys, upgrades and troubleshooting.
+
+## Work across computers
+
+Connect another computer through **Settings → Servers** to open its projects from the desktop. Workspaces are grouped by computer, and the interface identifies the machine that owns the active project. Remote sessions, file previews and supported transfers use the connected instance.
 
 ## Choose how to work
 
@@ -57,12 +61,12 @@ These serve different purposes:
 | --- | --- | --- |
 | **Paper Wiki** | Source-backed summaries and connections you can revisit | Shared across projects |
 | **Saved papers and notes** | The material a particular project relies on | Associated with the workspace |
-| **Project memory** | Decisions, constraints and context worth carrying forward | Loaded according to the work mode and launch settings |
+| **Project memory** | Reusable preferences, configuration references and observed experience with sources and context | Ordinary sessions pre-load compact summaries; full records are read when needed |
 | **Conversation history** | What happened in a session | Available for review and continuation |
 
 The research workflow starts with existing knowledge, searches for gaps, reads original sources for exact claims, and saves useful material. Literature search supports academic indexes; general web search in PI uses a separately configured Brave key. Full-text access depends on the paper and configured sources.
 
-Memory keeps source and time relationships. A later decision can replace an earlier one without turning every wording difference into a conflict. Memory can be disabled for a launch or by the selected mode. Saved notes and model summaries still need checking against original evidence when accuracy matters.
+Agents save a few reusable preferences, configuration references and observations after checking related records. Ordinary sessions, including Builder, receive a compact project-memory summary by default. Full records retain their sources, dates, context and prior versions. You can ask an agent not to remember particular information, correct a record, or forget it. Saved summaries still need checking against original evidence when accuracy matters.
 
 ## From a question to a research run
 
@@ -89,9 +93,9 @@ Version 0.7 moves Codex subscription compaction later and gives Anthropic sessio
 
 ## Use your phone
 
-The optional companion lets you follow and drive Claude, Codex and PI sessions, browse project material, and change work mode from phone Settings. Your computer must stay running.
+The optional companion lets you follow and drive Claude, Codex and PI sessions, browse project material, and change work mode from phone Settings. Its Team tab follows each Research and Manuscript Team (members, activity, results, rounds), talks to the team through the team's assistant, and answers the questions a Research Team asks you. A resident researcher can be resumed, paused, asked for briefing slides or talked to from the phone; creating one or editing its agreement stays on the desktop. Your computer must stay running.
 
-Install and connect Tailscale on both devices, then enable **Settings → Phone (iOS companion)** on the desktop and pair using its QR code. HTTPS is needed for the supported iOS Home Screen and notification setup. The pairing link grants access to sessions and agent controls; keep it private.
+Install and connect Tailscale on both devices, then enable **Settings → Phone (iOS companion)** on the desktop and click **Show pairing code**. Scan the QR code with the phone's camera or type the six-digit code on the phone. A code pairs one phone, once, within ten minutes; each paired phone gets its own key and is listed in Settings, where it can be removed without affecting the others. For notifications on iOS, add the page to the Home Screen; the icon pairs itself on first launch. HTTPS is needed for the supported iOS Home Screen and notification setup.
 
 [Phone setup and access controls](docs/installation.md#7-optional-follow-and-drive-sessions-from-your-phone).
 
@@ -108,7 +112,7 @@ Before upgrading, finish active work and quit the app. Replace the application, 
 ## Help and release checks
 
 - [Installation, configuration and troubleshooting](docs/installation.md)
-- [What changed and what was tested in 0.8.1](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.1)
+- [What changed and what was tested in 0.8.2](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.2)
 - [Issues](https://github.com/daidong/DIR-Agent/issues) — include app version, OS, CPU, package type and reproduction steps. Remove credentials and private research from diagnostics before sharing.
 
 This public repository hosts application packages, documentation and community issues. The application source is maintained separately.
