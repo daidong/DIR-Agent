@@ -4,7 +4,14 @@
 
 Work on papers, code, experiments, and presentations in one project folder. Keep the papers you found, the decisions you made, and the evidence behind your results available when the conversation ends.
 
-[Download 0.8.2](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.2) · [Release notes](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.2) · [Report a problem](https://github.com/daidong/DIR-Agent/issues)
+[Download 0.8.3](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.3) · [Release notes](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.3) · [Report a problem](https://github.com/daidong/DIR-Agent/issues)
+
+## New in 0.8.3
+
+- **Follow PI replies as they happen.** Markdown renders during streaming, and text and tool calls appear in order. Intermediate explanations use a lighter style on desktop and phone; the final answer remains distinct.
+- **Keep longer PI sessions on track.** Context handling uses provider-reported token counts when available, with one recovery attempt after a context overflow. Cache affinity and saved usage accounting have also been corrected.
+- **Use remote project files more reliably.** Chat links preserve the remote workspace when opening HTML previews, and downloads can replace a file after you confirm it in the save dialog.
+- **Use simpler work modes.** Modes are now built in rather than editable custom configurations. PI and CLI agents also share tool definitions more consistently.
 
 ## What you can do
 
@@ -31,11 +38,11 @@ Try: “Explain this project and the research material already saved for it. Sug
 
 | Computer | Recommended package | Alternative |
 | --- | --- | --- |
-| macOS · Apple Silicon | [DMG](https://github.com/daidong/DIR-Agent/releases/download/v0.8.2/Research-Pilot-0.8.2-mac-arm64.dmg) | [ZIP](https://github.com/daidong/DIR-Agent/releases/download/v0.8.2/Research-Pilot-0.8.2-mac-arm64.zip) |
-| Ubuntu/Debian · Intel / AMD 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.2/Research-Pilot-0.8.2-linux-amd64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.2/Research-Pilot-0.8.2-linux-x86_64.AppImage) |
-| Ubuntu/Debian · ARM 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.2/Research-Pilot-0.8.2-linux-arm64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.2/Research-Pilot-0.8.2-linux-arm64.AppImage) |
+| macOS · Apple Silicon | [DMG](https://github.com/daidong/DIR-Agent/releases/download/v0.8.3/Research-Pilot-0.8.3-mac-arm64.dmg) | [ZIP](https://github.com/daidong/DIR-Agent/releases/download/v0.8.3/Research-Pilot-0.8.3-mac-arm64.zip) |
+| Ubuntu/Debian · Intel / AMD 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.3/Research-Pilot-0.8.3-linux-amd64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.3/Research-Pilot-0.8.3-linux-x86_64.AppImage) |
+| Ubuntu/Debian · ARM 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.3/Research-Pilot-0.8.3-linux-arm64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.3/Research-Pilot-0.8.3-linux-arm64.AppImage) |
 
-On macOS, open the DMG and drag Research Pilot into Applications. On Ubuntu/Debian, install the downloaded deb with `sudo apt install ./Research-Pilot-0.8.2-linux-amd64.deb` (use the arm64 filename on ARM).
+On macOS, open the DMG and drag Research Pilot into Applications. On Ubuntu/Debian, install the downloaded deb with `sudo apt install ./Research-Pilot-0.8.3-linux-amd64.deb` (use the arm64 filename on ARM).
 
 The app includes its runtime and data service. Packaged use does not need Node.js, Docker, a source checkout, or a manually started server. Windows and Intel Mac installers are not included. Choose a named application package; GitHub's automatic “Source code” archives are the public repository snapshot, not the application.
 
@@ -49,9 +56,9 @@ Connect another computer through **Settings → Servers** to open its projects f
 
 **The agent is the execution engine.** Claude and Codex run their installed CLIs inside the app. PI Agent runs in a separate bundled process and supports configured model providers and compatible local endpoints. Their available tools and authentication differ; the app does not make them interchangeable.
 
-**The work mode sets the session's defaults.** Use the workspace mode picker for Collaborator and enable the experimental choices to explore Ideator, Builder, Teacher, or Policy & Records. These emphasize general collaboration, exploring ideas, engineering, teaching, or source-based policy and record work. You can inspect a mode or create a custom one. A mode is a starting style and configuration, not proof of better answers or a security sandbox.
+**The work mode sets the session's defaults.** Use the workspace mode picker for Collaborator and enable the experimental choices to explore Ideator, Builder, Teacher, or Policy & Records. These emphasize general collaboration, exploring ideas, engineering, teaching, or source-based policy and record work. Modes are built in and cannot be edited; each new session uses the mode's current version. A mode is a starting style, not proof of better answers or a security sandbox.
 
-Changing modes can end the workspace's ordinary foreground sessions. The app shows the affected sessions before you confirm and starts fresh sessions with the new configuration. Saving a custom mode and applying it are separate actions. Changing PI's model or reasoning effort is a separate choice; its workspace selection is restored after an app restart.
+Changing modes can end the workspace's ordinary foreground sessions. The app shows the affected sessions before you confirm and starts fresh sessions with the new mode. Changing PI's model or reasoning effort is a separate choice; its workspace selection is restored after an app restart.
 
 ## Papers, knowledge, and memory
 
@@ -87,9 +94,9 @@ For a paper draft, choose **Team → Manuscript Team**. A lead author owns the m
 
 ## Longer PI sessions
 
-PI Agent now checks the input sent to the model, keeps large tool results in local storage, and retrieves their original text when needed. Older conversation can be compressed while the complete session history remains available. The interface shows when this is happening.
+PI Agent checks the input sent to the model, keeps large tool results in local storage, and retrieves their original text when needed. Older conversation can be compressed while the complete session history remains available. The interface shows when this is happening.
 
-Version 0.7 moves Codex subscription compaction later and gives Anthropic sessions a working-context ceiling. The smaller Codex output reserve is an input-budget calculation, not a new response-length setting. Provider limits still apply. Changing providers can require rebuilding the model's working context.
+Context sizing uses provider-reported token counts when available and estimates changes since the last request. If a provider rejects an oversized request, PI attempts compaction and retries once. Codex subscription and Anthropic sessions have different context thresholds; the Codex output reserve is an input-budget calculation, not a response-length setting. Provider limits still apply. Changing providers can require rebuilding the model's working context.
 
 ## Use your phone
 
@@ -112,7 +119,7 @@ Before upgrading, finish active work and quit the app. Replace the application, 
 ## Help and release checks
 
 - [Installation, configuration and troubleshooting](docs/installation.md)
-- [What changed and what was tested in 0.8.2](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.2)
+- [What changed and what was tested in 0.8.3](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.3)
 - [Issues](https://github.com/daidong/DIR-Agent/issues) — include app version, OS, CPU, package type and reproduction steps. Remove credentials and private research from diagnostics before sharing.
 
 This public repository hosts application packages, documentation and community issues. The application source is maintained separately.
