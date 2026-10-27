@@ -4,14 +4,14 @@
 
 Work on papers, code, experiments, and presentations in one project folder. Keep the papers you found, the decisions you made, and the evidence behind your results available when the conversation ends.
 
-[Download 0.8.3](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.3) · [Release notes](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.3) · [Report a problem](https://github.com/daidong/DIR-Agent/issues)
+[Download 0.8.4](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.4) · [Release notes](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.4) · [Report a problem](https://github.com/daidong/DIR-Agent/issues)
 
-## New in 0.8.3
+## New in 0.8.4
 
-- **Follow PI replies as they happen.** Markdown renders during streaming, and text and tool calls appear in order. Intermediate explanations use a lighter style on desktop and phone; the final answer remains distinct.
-- **Keep longer PI sessions on track.** Context handling uses provider-reported token counts when available, with one recovery attempt after a context overflow. Cache affinity and saved usage accounting have also been corrected.
-- **Use remote project files more reliably.** Chat links preserve the remote workspace when opening HTML previews, and downloads can replace a file after you confirm it in the save dialog.
-- **Use simpler work modes.** Modes are now built in rather than editable custom configurations. PI and CLI agents also share tool definitions more consistently.
+- **Preserve usable PI context.** An unsuccessful early compaction no longer stops a session when its existing context still fits. Saved conversation images live outside the history JSON and are restored when needed.
+- **Respect subscription model differences.** PI uses model-specific Codex context windows and preserves the Anthropic model identity needed to restore signed thinking history.
+- **Keep PiPilot instructions in PiPilot sessions.** Claude and Codex receive PiPilot identity and rules at launch, rather than through edits to your project's `AGENTS.md` or `CLAUDE.md`. Existing PiPilot-managed blocks are retired; shared skills and delegate definitions remain available.
+- **Ask Builder for evidence, not just assurances.** Updated Builder instructions ask agents to check completion claims against evidence from the current session. This is guidance to the model, not a guarantee that every claim is correct.
 
 ## What you can do
 
@@ -38,11 +38,11 @@ Try: “Explain this project and the research material already saved for it. Sug
 
 | Computer | Recommended package | Alternative |
 | --- | --- | --- |
-| macOS · Apple Silicon | [DMG](https://github.com/daidong/DIR-Agent/releases/download/v0.8.3/Research-Pilot-0.8.3-mac-arm64.dmg) | [ZIP](https://github.com/daidong/DIR-Agent/releases/download/v0.8.3/Research-Pilot-0.8.3-mac-arm64.zip) |
-| Ubuntu/Debian · Intel / AMD 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.3/Research-Pilot-0.8.3-linux-amd64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.3/Research-Pilot-0.8.3-linux-x86_64.AppImage) |
-| Ubuntu/Debian · ARM 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.3/Research-Pilot-0.8.3-linux-arm64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.3/Research-Pilot-0.8.3-linux-arm64.AppImage) |
+| macOS · Apple Silicon | [DMG](https://github.com/daidong/DIR-Agent/releases/download/v0.8.4/Research-Pilot-0.8.4-mac-arm64.dmg) | [ZIP](https://github.com/daidong/DIR-Agent/releases/download/v0.8.4/Research-Pilot-0.8.4-mac-arm64.zip) |
+| Ubuntu/Debian · Intel / AMD 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.4/Research-Pilot-0.8.4-linux-amd64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.4/Research-Pilot-0.8.4-linux-x86_64.AppImage) |
+| Ubuntu/Debian · ARM 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.4/Research-Pilot-0.8.4-linux-arm64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.4/Research-Pilot-0.8.4-linux-arm64.AppImage) |
 
-On macOS, open the DMG and drag Research Pilot into Applications. On Ubuntu/Debian, install the downloaded deb with `sudo apt install ./Research-Pilot-0.8.3-linux-amd64.deb` (use the arm64 filename on ARM).
+On macOS, open the DMG and drag Research Pilot into Applications. On Ubuntu/Debian, install the downloaded deb with `sudo apt install ./Research-Pilot-0.8.4-linux-amd64.deb` (use the arm64 filename on ARM).
 
 The app includes its runtime and data service. Packaged use does not need Node.js, Docker, a source checkout, or a manually started server. Windows and Intel Mac installers are not included. Choose a named application package; GitHub's automatic “Source code” archives are the public repository snapshot, not the application.
 
@@ -110,7 +110,7 @@ Install and connect Tailscale on both devices, then enable **Settings → Phone 
 
 Desktop and phone sessions launch Claude Code with `--dangerously-skip-permissions` and Codex with `--dangerously-bypass-approvals-and-sandbox`. Agents can run commands, edit or delete files, and use the network with your OS account's permissions without per-action approval. Codex's own sandbox is disabled. This fixed launch behavior does not grant administrator privileges. Use trusted tasks and keep backups.
 
-Research data lives under `~/.pipilot` by default. Your documents and code stay in the project folders you choose. Opening a workspace can synchronize integration files under `.agents`, `.claude` and `.pipilot`, plus managed guidance in `AGENTS.md` or `CLAUDE.md`.
+Research data lives under `~/.pipilot` by default. Your documents and code stay in the project folders you choose. Opening a workspace can synchronize integration files under `.agents`, `.claude` and `.pipilot`. PiPilot identity and rules are supplied at session launch; workspace sync removes only PiPilot-managed guidance blocks left by older versions of `AGENTS.md` or `CLAUDE.md`, preserving your own content.
 
 Local storage does not mean offline processing: model providers, search services and other configured tools receive the requests needed for their work. Credentials, account access and provider charges are configured separately.
 
@@ -119,7 +119,7 @@ Before upgrading, finish active work and quit the app. Replace the application, 
 ## Help and release checks
 
 - [Installation, configuration and troubleshooting](docs/installation.md)
-- [What changed and what was tested in 0.8.3](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.3)
+- [What changed and what was tested in 0.8.4](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.4)
 - [Issues](https://github.com/daidong/DIR-Agent/issues) — include app version, OS, CPU, package type and reproduction steps. Remove credentials and private research from diagnostics before sharing.
 
 This public repository hosts application packages, documentation and community issues. The application source is maintained separately.
