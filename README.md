@@ -4,14 +4,15 @@
 
 Work on papers, code, experiments, and presentations in one project folder. Keep the papers you found, the decisions you made, and the evidence behind your results available when the conversation ends.
 
-[Download 0.8.4](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.4) · [Release notes](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.4) · [Report a problem](https://github.com/daidong/DIR-Agent/issues)
+[Download 0.8.5](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.5) · [Release notes](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.5) · [Report a problem](https://github.com/daidong/DIR-Agent/issues)
 
-## New in 0.8.4
+## New in 0.8.5
 
-- **Preserve usable PI context.** An unsuccessful early compaction no longer stops a session when its existing context still fits. Saved conversation images live outside the history JSON and are restored when needed.
-- **Respect subscription model differences.** PI uses model-specific Codex context windows and preserves the Anthropic model identity needed to restore signed thinking history.
-- **Keep PiPilot instructions in PiPilot sessions.** Claude and Codex receive PiPilot identity and rules at launch, rather than through edits to your project's `AGENTS.md` or `CLAUDE.md`. Existing PiPilot-managed blocks are retired; shared skills and delegate definitions remain available.
-- **Ask Builder for evidence, not just assurances.** Updated Builder instructions ask agents to check completion claims against evidence from the current session. This is guidance to the model, not a guarantee that every claim is correct.
+- **Get started with a setup checklist.** First launch identifies missing tools and authentication. Settings → Setup groups required and optional components, and supported keys in your shell configuration can be recognized without re-entering them.
+- **Keep work side by side.** Files and PI Agent support left/right split panes. Open multiple PI conversations, reopen them from Recap, and keep more than one file or session visible.
+- **Edit paper diagrams in place.** Open draw.io diagrams in the Files tab, export figures, and use the figure assistant to revise the canvas. Figure working files stay in a hidden directory beside the final outputs.
+- **Keep sessions responsive.** PI supports background shell commands, revised context handling, and smaller tool-event payloads. The separate local host lets work continue when the desktop restarts.
+- **A simpler interface.** PDF text can be selected and copied, the file tree follows the active file, and the retired Memory settings page is gone. Project memory still loads and can be saved by the current agent.
 
 ## What you can do
 
@@ -30,19 +31,19 @@ For example, ask: “Compare the methods in these three papers, find the stronge
 ## Start in a few minutes
 
 1. **Install Research Pilot** using the package for your computer below.
-2. **Choose an agent.** For Claude or Codex, install that CLI and sign in from a terminal. For PI Agent, configure a model and authentication in **Settings → PI Agent**; its runtime is bundled.
-3. **Open a project folder.** It can be an existing repository or an empty research folder.
-4. **Run Settings → Environment check**, then open the agent tab and send a small request.
+2. **Give an agent a model.** On first launch the app checks your machine and says what is missing. Sign in once with the Claude Code or Codex CLI from a terminal (PI Agent shares that login), or add an Anthropic or OpenAI API key in **Settings → PI Agent**, or point PI Agent at your own model server.
+3. **Open a project folder.** An existing repository or an empty folder both work.
+4. **Open the agent tab and send a small request.** Everything else is optional; the app asks when a feature needs something. **Settings → Setup** shows the checklist any time.
 
 Try: “Explain this project and the research material already saved for it. Suggest one useful next step.”
 
 | Computer | Recommended package | Alternative |
 | --- | --- | --- |
-| macOS · Apple Silicon | [DMG](https://github.com/daidong/DIR-Agent/releases/download/v0.8.4/Research-Pilot-0.8.4-mac-arm64.dmg) | [ZIP](https://github.com/daidong/DIR-Agent/releases/download/v0.8.4/Research-Pilot-0.8.4-mac-arm64.zip) |
-| Ubuntu/Debian · Intel / AMD 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.4/Research-Pilot-0.8.4-linux-amd64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.4/Research-Pilot-0.8.4-linux-x86_64.AppImage) |
-| Ubuntu/Debian · ARM 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.4/Research-Pilot-0.8.4-linux-arm64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.4/Research-Pilot-0.8.4-linux-arm64.AppImage) |
+| macOS · Apple Silicon | [DMG](https://github.com/daidong/DIR-Agent/releases/download/v0.8.5/Research-Pilot-0.8.5-mac-arm64.dmg) | [ZIP](https://github.com/daidong/DIR-Agent/releases/download/v0.8.5/Research-Pilot-0.8.5-mac-arm64.zip) |
+| Ubuntu/Debian · Intel / AMD 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.5/Research-Pilot-0.8.5-linux-amd64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.5/Research-Pilot-0.8.5-linux-x86_64.AppImage) |
+| Ubuntu/Debian · ARM 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.5/Research-Pilot-0.8.5-linux-arm64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.5/Research-Pilot-0.8.5-linux-arm64.AppImage) |
 
-On macOS, open the DMG and drag Research Pilot into Applications. On Ubuntu/Debian, install the downloaded deb with `sudo apt install ./Research-Pilot-0.8.4-linux-amd64.deb` (use the arm64 filename on ARM).
+On macOS, open the DMG and drag Research Pilot into Applications. On Ubuntu/Debian, install the downloaded deb with `sudo apt install ./Research-Pilot-0.8.5-linux-amd64.deb` (use the arm64 filename on ARM).
 
 The app includes its runtime and data service. Packaged use does not need Node.js, Docker, a source checkout, or a manually started server. Windows and Intel Mac installers are not included. Choose a named application package; GitHub's automatic “Source code” archives are the public repository snapshot, not the application.
 
@@ -119,7 +120,7 @@ Before upgrading, finish active work and quit the app. Replace the application, 
 ## Help and release checks
 
 - [Installation, configuration and troubleshooting](docs/installation.md)
-- [What changed and what was tested in 0.8.4](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.4)
+- [What changed and what was tested in 0.8.5](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.5)
 - [Issues](https://github.com/daidong/DIR-Agent/issues) — include app version, OS, CPU, package type and reproduction steps. Remove credentials and private research from diagnostics before sharing.
 
 This public repository hosts application packages, documentation and community issues. The application source is maintained separately.

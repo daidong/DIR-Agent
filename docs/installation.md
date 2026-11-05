@@ -1,4 +1,4 @@
-# Install and configure Research Pilot 0.8.4
+# Install and configure Research Pilot 0.8.5
 
 [Back to the product overview](../README.md)
 
@@ -6,13 +6,13 @@ Use only the sections relevant to your setup. PI Agent, Claude Code and Codex ar
 
 ## 1. Choose the right download
 
-The filenames and direct links below are for **0.8.4**. For later releases, use the [latest release page](https://github.com/daidong/DIR-Agent/releases/latest) and substitute that version in the commands.
+The filenames and direct links below are for **0.8.5**. For later releases, use the [latest release page](https://github.com/daidong/DIR-Agent/releases/latest) and substitute that version in the commands.
 
 | Your computer | Recommended download | Alternative |
 |---|---|---|
-| macOS, Apple Silicon (M-series) | [mac-arm64.dmg](https://github.com/daidong/DIR-Agent/releases/download/v0.8.4/Research-Pilot-0.8.4-mac-arm64.dmg) | [mac-arm64.zip](https://github.com/daidong/DIR-Agent/releases/download/v0.8.4/Research-Pilot-0.8.4-mac-arm64.zip) |
-| Ubuntu/Debian, Intel or AMD 64-bit | [linux-amd64.deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.4/Research-Pilot-0.8.4-linux-amd64.deb) | [linux-x86_64.AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.4/Research-Pilot-0.8.4-linux-x86_64.AppImage) |
-| Ubuntu/Debian, ARM 64-bit | [linux-arm64.deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.4/Research-Pilot-0.8.4-linux-arm64.deb) | [linux-arm64.AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.4/Research-Pilot-0.8.4-linux-arm64.AppImage) |
+| macOS, Apple Silicon (M-series) | [mac-arm64.dmg](https://github.com/daidong/DIR-Agent/releases/download/v0.8.5/Research-Pilot-0.8.5-mac-arm64.dmg) | [mac-arm64.zip](https://github.com/daidong/DIR-Agent/releases/download/v0.8.5/Research-Pilot-0.8.5-mac-arm64.zip) |
+| Ubuntu/Debian, Intel or AMD 64-bit | [linux-amd64.deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.5/Research-Pilot-0.8.5-linux-amd64.deb) | [linux-x86_64.AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.5/Research-Pilot-0.8.5-linux-x86_64.AppImage) |
+| Ubuntu/Debian, ARM 64-bit | [linux-arm64.deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.5/Research-Pilot-0.8.5-linux-arm64.deb) | [linux-arm64.AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.5/Research-Pilot-0.8.5-linux-arm64.AppImage) |
 
 **Not sure about your CPU?** On macOS, open **Apple menu → About This Mac** and look at **Chip**. On Linux, run:
 
@@ -23,15 +23,15 @@ uname -m
 - `x86_64`: use the **amd64 deb** or **x86_64 AppImage**. These names describe the same CPU architecture.
 - `aarch64` or `arm64`: use **arm64**.
 
-**Windows is not supported.** Version 0.8.4 also does not include an Intel Mac installer. Linux installation checks were performed on Ubuntu 24.04; other distributions may need different system packages. A Linux graphical desktop session is needed for the desktop UI.
+**Windows is not supported.** Version 0.8.5 also does not include an Intel Mac installer. Linux installation checks were performed on Ubuntu 24.04; other distributions may need different system packages. A Linux graphical desktop session is needed for the desktop UI.
 
-On the release page, choose one of the six **`Research-Pilot-0.8.4-…`** assets listed above. GitHub's automatic **Source code (zip)** and **Source code (tar.gz)** entries contain the public documentation snapshot for this release; they do not contain the application source or an installer.
+On the release page, choose one of the six **`Research-Pilot-0.8.5-…`** assets listed above. GitHub's automatic **Source code (zip)** and **Source code (tar.gz)** entries contain the public documentation snapshot for this release; they do not contain the application source or an installer.
 
 ## 2. Install Research Pilot
 
 ### macOS: Apple Silicon
 
-1. Download `Research-Pilot-0.8.4-mac-arm64.dmg`.
+1. Download `Research-Pilot-0.8.5-mac-arm64.dmg`.
 2. Double-click the dmg to open it.
 3. Drag **Research Pilot** into **Applications**.
 4. Eject the mounted disk image.
@@ -50,7 +50,7 @@ For **x86_64 / amd64**:
 ```bash
 cd ~/Downloads
 sudo apt update
-sudo apt install ./Research-Pilot-0.8.4-linux-amd64.deb
+sudo apt install ./Research-Pilot-0.8.5-linux-amd64.deb
 ```
 
 For **arm64**:
@@ -58,7 +58,7 @@ For **arm64**:
 ```bash
 cd ~/Downloads
 sudo apt update
-sudo apt install ./Research-Pilot-0.8.4-linux-arm64.deb
+sudo apt install ./Research-Pilot-0.8.5-linux-arm64.deb
 ```
 
 Use **one** of these blocks. Keep the `./` before the filename: it tells apt to install the downloaded local file. Using apt also resolves the declared system dependencies.
@@ -91,22 +91,22 @@ sudo apt update
 sudo apt install libfuse2t64 zlib1g-dev
 ```
 
-On older Ubuntu releases, the FUSE package is named `libfuse2` rather than `libfuse2t64`. The 0.8.4 arm64 AppImage additionally requires `zlib1g-dev` because its bundled runtime looks for `libz.so`; installing `zlib1g` alone does not provide that filename.
+On older Ubuntu releases, the FUSE package is named `libfuse2` rather than `libfuse2t64`. The 0.8.5 arm64 AppImage additionally requires `zlib1g-dev` because its bundled runtime looks for `libz.so`; installing `zlib1g` alone does not provide that filename.
 
 Then make the downloaded file executable and run it. For **x86_64**:
 
 ```bash
 cd ~/Downloads
-chmod +x Research-Pilot-0.8.4-linux-x86_64.AppImage
-./Research-Pilot-0.8.4-linux-x86_64.AppImage
+chmod +x Research-Pilot-0.8.5-linux-x86_64.AppImage
+./Research-Pilot-0.8.5-linux-x86_64.AppImage
 ```
 
 For **arm64**:
 
 ```bash
 cd ~/Downloads
-chmod +x Research-Pilot-0.8.4-linux-arm64.AppImage
-./Research-Pilot-0.8.4-linux-arm64.AppImage
+chmod +x Research-Pilot-0.8.5-linux-arm64.AppImage
+./Research-Pilot-0.8.5-linux-arm64.AppImage
 ```
 
 If startup fails specifically because of Chromium's sandbox on Ubuntu 24.04, prefer the deb. An AppImage fallback is to append `--no-sandbox` to the launch command; this disables Chromium's sandbox for that launch.
@@ -114,7 +114,7 @@ If startup fails specifically because of Chromium's sandbox on Ubuntu 24.04, pre
 If FUSE is unavailable, you can extract the AppImage and run its contents. For example, in a directory where you want to keep the application:
 
 ```bash
-/path/to/Research-Pilot-0.8.4-linux-arm64.AppImage --appimage-extract
+/path/to/Research-Pilot-0.8.5-linux-arm64.AppImage --appimage-extract
 ./squashfs-root/research-pilot
 ```
 
@@ -166,8 +166,8 @@ This is the application's fixed launch behavior; there is no permission-mode sel
 
 ## 4. First launch and your first workspace
 
-1. Open Research Pilot. On a fresh installation, an **Environment check** may appear automatically. You can reopen it from **Settings → Environment check**.
-2. Check **Data daemon (pipilotd)** and **Terminal engine (node-pty)**. The packaged app includes these and starts its data service automatically.
+1. Open Research Pilot. The welcome panel identifies missing authentication and tools. You can reopen the checklist from **Settings → Setup**.
+2. Review the required components for the agent you want to use. The packaged app includes its data service and terminal engine. Optional tools are grouped separately; configure them when a task needs them.
 3. Confirm that the agent you intend to use is available. A missing CLI for an agent you do not use does not require installing that agent.
 4. Click **Open Folder…** and choose a project folder. You can create an empty folder for a new research project; it does not need to be this GitHub repository or an existing Git repository.
 5. Open **Claude**, **Codex**, or **PIAgent** to start a session. Complete any setup or workspace-trust prompts shown by that agent.
@@ -178,24 +178,6 @@ The application prepares its bundled research skills and tool configuration for 
 Opening a workspace can create or update integration files under `.claude/`, `.agents/` and `.pipilot/`. PiPilot identity and rules are supplied when an agent session launches, not by adding them to `AGENTS.md` or `CLAUDE.md`. Workspace sync removes PiPilot-managed guidance blocks left by older versions and preserves your own content. Shared skills and delegate definitions remain available to separately launched CLIs. The file editor and agents can still edit project files when you use those features.
 
 ## 5. Optional research tools and data sources
-
-### Python for reliability checks
-
-Python is not required to open Research Pilot. **Python 3.9 or newer** on `PATH` enables the provenance/reliability checker used by `/provcheck-claude:check` in Claude sessions.
-
-Check your installation:
-
-```bash
-python3 --version
-```
-
-On Ubuntu/Debian:
-
-```bash
-sudo apt install python3
-```
-
-On macOS, install Python from [python.org](https://www.python.org/downloads/macos/), or use `brew install python3` if you already use Homebrew. Reopen the app and rerun Environment check afterward.
 
 ### MarkItDown for document conversion
 
@@ -214,7 +196,7 @@ Open a new terminal and check:
 markitdown --help
 ```
 
-Then restart Research Pilot and rerun Environment check. The [uv tools guide](https://docs.astral.sh/uv/guides/tools/) explains tool isolation and executable paths; avoid modifying your system Python with `sudo pip install`.
+Then restart Research Pilot and reopen Settings → Setup. The [uv tools guide](https://docs.astral.sh/uv/guides/tools/) explains tool isolation and executable paths; avoid modifying your system Python with `sudo pip install`.
 
 ### Recommended API setup
 
@@ -350,12 +332,12 @@ Pairing is per computer. Repeat these steps if you install Research Pilot on ano
 | AppImage reports `libfuse.so.2` missing | Install `libfuse2t64` on Ubuntu 24.04, or `libfuse2` on older Ubuntu releases; alternatively use the deb. |
 | arm64 AppImage reports `libz.so` missing | Install `zlib1g-dev`, or use the arm64 deb. |
 | Chromium sandbox prevents AppImage startup | Prefer the deb; the `--no-sandbox` launch fallback is described above. |
-| Data daemon or terminal engine check fails | Restart the application and rerun **Settings → Environment check**. If it persists, reinstall the correct package and collect diagnostics. |
+| Data daemon or terminal engine check fails | Restart the application and rerun **Settings → Setup**. If it persists, reinstall the correct package and collect diagnostics. |
 | Phone settings report `no Tailscale` | Confirm Tailscale is installed and connected on your computer, then toggle **Share sessions to your phone** off and on. Without it, only LAN mode can serve the phone. |
 | Phone settings report `HTTP` instead of `HTTPS` | In the [Tailscale admin DNS page](https://login.tailscale.com/admin/dns), enable **MagicDNS** and **HTTPS Certificates**, then toggle the phone switch again. Reading sessions works over HTTP; Add to Home Screen and push notifications need HTTPS. |
 | Phone shows a pairing screen again | The device may have been revoked or its browser storage cleared. Reopen Settings → Phone, generate a new pairing code, and pair the device again. |
 | Python or MarkItDown is missing | These affect the optional features described above. Install the tool you need, reopen the app, and click **Recheck**. |
 | Literature search fails or returns limited results | Inspect the provider error and its credentials/rate limits in **Literature & full-text**. Full-text availability varies by paper. |
 
-For a reproducible problem, use **Export diagnostics** in the Environment check and open an [issue](https://github.com/daidong/DIR-Agent/issues). Include your Research Pilot version, operating system, CPU architecture, package type, exact error, and the steps that triggered it. Review diagnostic files before posting publicly and omit credentials or private research content.
+For a reproducible problem, use **Export diagnostics** in Settings → Setup and open an [issue](https://github.com/daidong/DIR-Agent/issues). Include your Research Pilot version, operating system, CPU architecture, package type, exact error, and the steps that triggered it. Review diagnostic files before posting publicly and omit credentials or private research content.
 
