@@ -4,15 +4,15 @@
 
 Work on papers, code, experiments, and presentations in one project folder. Keep the papers you found, the decisions you made, and the evidence behind your results available when the conversation ends.
 
-[Download 0.8.5](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.5) · [Release notes](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.5) · [Report a problem](https://github.com/daidong/DIR-Agent/issues)
+[Download 0.8.6](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.6) · [Release notes](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.6) · [Report a problem](https://github.com/daidong/DIR-Agent/issues)
 
-## New in 0.8.5
+## New in 0.8.6
 
-- **Get started with a setup checklist.** First launch identifies missing tools and authentication. Settings → Setup groups required and optional components, and supported keys in your shell configuration can be recognized without re-entering them.
-- **Keep work side by side.** Files and PI Agent support left/right split panes. Open multiple PI conversations, reopen them from Recap, and keep more than one file or session visible.
-- **Edit paper diagrams in place.** Open draw.io diagrams in the Files tab, export figures, and use the figure assistant to revise the canvas. Figure working files stay in a hidden directory beside the final outputs.
-- **Keep sessions responsive.** PI supports background shell commands, revised context handling, and smaller tool-event payloads. The separate local host lets work continue when the desktop restarts.
-- **A simpler interface.** PDF text can be selected and copied, the file tree follows the active file, and the retired Memory settings page is gone. Project memory still loads and can be saved by the current agent.
+- **One workbench for files and conversations.** Open files beside PI Agent conversations without switching to a separate top-level Files tab. Left/right split panes keep files and conversations side by side.
+- **More responsive long chats.** Long conversations use a windowed message list. Inactive conversation feeds avoid unnecessary updates, and cached viewers reduce repeat work when switching tabs.
+- **See context usage before compaction.** A thin bar shows how close the current conversation is to the automatic compaction threshold.
+- **Improved file viewers.** Updates cover PDF search and text selection, image viewing, CSV and notebook content copying, and file navigation.
+- **Refined recovery.** PI handles transient connection errors and compaction failures more consistently.
 
 ## What you can do
 
@@ -39,11 +39,11 @@ Try: “Explain this project and the research material already saved for it. Sug
 
 | Computer | Recommended package | Alternative |
 | --- | --- | --- |
-| macOS · Apple Silicon | [DMG](https://github.com/daidong/DIR-Agent/releases/download/v0.8.5/Research-Pilot-0.8.5-mac-arm64.dmg) | [ZIP](https://github.com/daidong/DIR-Agent/releases/download/v0.8.5/Research-Pilot-0.8.5-mac-arm64.zip) |
-| Ubuntu/Debian · Intel / AMD 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.5/Research-Pilot-0.8.5-linux-amd64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.5/Research-Pilot-0.8.5-linux-x86_64.AppImage) |
-| Ubuntu/Debian · ARM 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.5/Research-Pilot-0.8.5-linux-arm64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.5/Research-Pilot-0.8.5-linux-arm64.AppImage) |
+| macOS · Apple Silicon | [DMG](https://github.com/daidong/DIR-Agent/releases/download/v0.8.6/Research-Pilot-0.8.6-mac-arm64.dmg) | [ZIP](https://github.com/daidong/DIR-Agent/releases/download/v0.8.6/Research-Pilot-0.8.6-mac-arm64.zip) |
+| Ubuntu/Debian · Intel / AMD 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.6/Research-Pilot-0.8.6-linux-amd64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.6/Research-Pilot-0.8.6-linux-x86_64.AppImage) |
+| Ubuntu/Debian · ARM 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.6/Research-Pilot-0.8.6-linux-arm64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.6/Research-Pilot-0.8.6-linux-arm64.AppImage) |
 
-On macOS, open the DMG and drag Research Pilot into Applications. On Ubuntu/Debian, install the downloaded deb with `sudo apt install ./Research-Pilot-0.8.5-linux-amd64.deb` (use the arm64 filename on ARM).
+On macOS, open the DMG and drag Research Pilot into Applications. On Ubuntu/Debian, install the downloaded deb with `sudo apt install ./Research-Pilot-0.8.6-linux-amd64.deb` (use the arm64 filename on ARM).
 
 The app includes its runtime and data service. Packaged use does not need Node.js, Docker, a source checkout, or a manually started server. Windows and Intel Mac installers are not included. Choose a named application package; GitHub's automatic “Source code” archives are the public repository snapshot, not the application.
 
@@ -120,7 +120,7 @@ Before upgrading, finish active work and quit the app. Replace the application, 
 ## Help and release checks
 
 - [Installation, configuration and troubleshooting](docs/installation.md)
-- [What changed and what was tested in 0.8.5](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.5)
+- [What changed and what was tested in 0.8.6](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.6)
 - [Issues](https://github.com/daidong/DIR-Agent/issues) — include app version, OS, CPU, package type and reproduction steps. Remove credentials and private research from diagnostics before sharing.
 
 This public repository hosts application packages, documentation and community issues. The application source is maintained separately.
