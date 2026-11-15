@@ -4,15 +4,15 @@
 
 Work on papers, code, experiments, and presentations in one project folder. Keep the papers you found, the decisions you made, and the evidence behind your results available when the conversation ends.
 
-[Download 0.8.6](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.6) · [Release notes](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.6) · [Report a problem](https://github.com/daidong/DIR-Agent/issues)
+[Download 0.8.8](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.8) · [Release notes](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.8) · [Report a problem](https://github.com/daidong/DIR-Agent/issues)
 
-## New in 0.8.6
+## New in 0.8.8
 
-- **One workbench for files and conversations.** Open files beside PI Agent conversations without switching to a separate top-level Files tab. Left/right split panes keep files and conversations side by side.
-- **More responsive long chats.** Long conversations use a windowed message list. Inactive conversation feeds avoid unnecessary updates, and cached viewers reduce repeat work when switching tabs.
-- **See context usage before compaction.** A thin bar shows how close the current conversation is to the automatic compaction threshold.
-- **Improved file viewers.** Updates cover PDF search and text selection, image viewing, CSV and notebook content copying, and file navigation.
-- **Refined recovery.** PI handles transient connection errors and compaction failures more consistently.
+- **Teams inside PIAgent conversations.** Discuss the goal, review a brief, and click **Start team**. Follow members, questions and results from the conversation. New teams organize work through tasks and direct collaboration rather than a mandatory research graph.
+- **Browser-assisted research.** PIAgent can work with browser tasks and help retrieve paper full text. Downloading a PDF does not automatically add it to your library; import it when you choose. Desktop computer-use support is macOS-only.
+- **GitHub Copilot sign-in.** Use supported Copilot models from PIAgent through **Settings → Subscriptions**, alongside Claude and Codex setup. Available models depend on your account.
+- **Review reusable domain knowledge.** Inspect rules, approve a content version, choose which rules to use, and delete unwanted rules. Viewing new rules clears the notification without enabling them.
+- **Runtime and workbench fixes.** Updated Electron, corrected terminal glyph sizing, improved streaming-tool handling, cached history search, math rendering, and refined team recovery and mobile interactions.
 
 ## What you can do
 
@@ -20,7 +20,7 @@ Work on papers, code, experiments, and presentations in one project folder. Keep
 | --- | --- | --- |
 | Read papers and compare evidence | Ask an agent; browse **Literature** and **Knowledge** | Saved papers, source links, Wiki pages and notes |
 | Write, code, or prepare slides | Open a project and use **Claude**, **Codex**, or **PIAgent** | Project files and session history |
-| Explore a research question over several steps | Create a plan in **Research**, revise it, then approve it | Plan versions, attempts, evidence, decisions and reports |
+| Explore a research question with a team | Ask PIAgent for a team brief, review it, then click **Start team** | Tasks, messages, evidence and deliverables |
 | Continue a project next week | Reopen its workspace | Project memory and prior work |
 | Follow work away from your desk | Pair the optional phone companion | The same computer-hosted sessions and research views |
 
@@ -39,11 +39,11 @@ Try: “Explain this project and the research material already saved for it. Sug
 
 | Computer | Recommended package | Alternative |
 | --- | --- | --- |
-| macOS · Apple Silicon | [DMG](https://github.com/daidong/DIR-Agent/releases/download/v0.8.6/Research-Pilot-0.8.6-mac-arm64.dmg) | [ZIP](https://github.com/daidong/DIR-Agent/releases/download/v0.8.6/Research-Pilot-0.8.6-mac-arm64.zip) |
-| Ubuntu/Debian · Intel / AMD 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.6/Research-Pilot-0.8.6-linux-amd64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.6/Research-Pilot-0.8.6-linux-x86_64.AppImage) |
-| Ubuntu/Debian · ARM 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.6/Research-Pilot-0.8.6-linux-arm64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.6/Research-Pilot-0.8.6-linux-arm64.AppImage) |
+| macOS · Apple Silicon | [DMG](https://github.com/daidong/DIR-Agent/releases/download/v0.8.8/Research-Pilot-0.8.8-mac-arm64.dmg) | [ZIP](https://github.com/daidong/DIR-Agent/releases/download/v0.8.8/Research-Pilot-0.8.8-mac-arm64.zip) |
+| Ubuntu/Debian · Intel / AMD 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.8/Research-Pilot-0.8.8-linux-amd64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.8/Research-Pilot-0.8.8-linux-x86_64.AppImage) |
+| Ubuntu/Debian · ARM 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.8/Research-Pilot-0.8.8-linux-arm64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.8/Research-Pilot-0.8.8-linux-arm64.AppImage) |
 
-On macOS, open the DMG and drag Research Pilot into Applications. On Ubuntu/Debian, install the downloaded deb with `sudo apt install ./Research-Pilot-0.8.6-linux-amd64.deb` (use the arm64 filename on ARM).
+On macOS, open the DMG and drag Research Pilot into Applications. On Ubuntu/Debian, install the downloaded deb with `sudo apt install ./Research-Pilot-0.8.8-linux-amd64.deb` (use the arm64 filename on ARM).
 
 The app includes its runtime and data service. Packaged use does not need Node.js, Docker, a source checkout, or a manually started server. Windows and Intel Mac installers are not included. Choose a named application package; GitHub's automatic “Source code” archives are the public repository snapshot, not the application.
 
@@ -74,24 +74,22 @@ These serve different purposes:
 
 The research workflow starts with existing knowledge, searches for gaps, reads original sources for exact claims, and saves useful material. Literature search supports academic indexes; general web search in PI uses a separately configured Brave key. Full-text access depends on the paper and configured sources.
 
+The **Domain knowledge** panel separately manages reusable rules. Turning a rule's **Use** switch on approves its current content for use. The workspace's **Load rules in conversations** switch controls loading. Opening the panel only marks rules as seen; it does not turn them on.
+
 Agents save a few reusable preferences, configuration references and observations after checking related records. Ordinary sessions, including Builder, receive a compact project-memory summary by default. Full records retain their sources, dates, context and prior versions. You can ask an agent not to remember particular information, correct a record, or forget it. Saved summaries still need checking against original evidence when accuracy matters.
 
-## From a question to a research run
+## Work with a team
 
-A Research Team is a recorded investigation with a reviewed plan and explicit execution permissions. Use ordinary chat for quick work; use **Team → Research Team** when you want the system to retain the plan, attempts, reviews and results together.
+Use ordinary chat for quick work. For a larger research or writing task, ask PIAgent to prepare a team brief.
 
-![Research planning, approval, investigation and review](docs/figures/research-run.svg)
+1. Discuss the goal, deliverables, model and authorized scope in the conversation.
+2. Review the brief card and request changes if needed. Drafting a brief does not start work.
+3. Click **Start team** yourself to authorize execution.
+4. Follow the team's card, inspect messages and results, and answer questions that need your decision.
 
-1. Enter your question and optional background in **Team → Research Team**. Choose a model and execution permissions.
-2. Generate a plan, read its intended work and completion criteria, and request changes in the same page.
-3. Select **Approve & start** for the reviewed version. Generating or editing a plan does not start the investigation.
-4. Follow progress, inspect design proposals and evidence, and intervene when a decision needs your input.
+New teams coordinate through tasks and direct messages. They do not need to maintain a research graph or follow a fixed author hierarchy. Existing teams retain their original execution contracts. Permissions and delivery checks still apply; a completed task does not establish that a scientific conclusion is correct.
 
-New runs can compare independent design proposals, critique them, select a direction and refine it before execution. They can also refine an already chosen direction directly. The application records these steps and their dependencies; this does not establish that a proposal is novel or scientifically sound.
-
-Drafts and plan history are saved. If you quit during plan generation, the saved draft remains and generation can be retried. Teams track usage without a cumulative task budget. Provider quotas and external service charges still apply. Approved execution permissions determine what a team may do.
-
-For a paper draft, choose **Team → Manuscript Team**. A lead author owns the manuscript and delegates supporting work. The team records task handoffs and review decisions; final acceptance can reuse prior checks instead of requiring the coordinator to reread every PDF page.
+Research and manuscript teams remain separate launches. Turning a research result into a manuscript requires a new writing brief and another **Start team** confirmation. Provider quotas and external service charges still apply. On Linux, team shell execution requires working `bubblewrap` isolation; it is refused when isolation is unavailable.
 
 ## Longer PI sessions
 
@@ -120,7 +118,7 @@ Before upgrading, finish active work and quit the app. Replace the application, 
 ## Help and release checks
 
 - [Installation, configuration and troubleshooting](docs/installation.md)
-- [What changed and what was tested in 0.8.6](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.6)
+- [What changed and what was tested in 0.8.8](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.8)
 - [Issues](https://github.com/daidong/DIR-Agent/issues) — include app version, OS, CPU, package type and reproduction steps. Remove credentials and private research from diagnostics before sharing.
 
 This public repository hosts application packages, documentation and community issues. The application source is maintained separately.
