@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research Pilot — a research workspace that remembers</title>
+<meta name="description" content="Research Pilot is a desktop workspace for doing research with Claude Code, Codex and its built-in PIAgent. Ask your papers, keep decisions and evidence in project memory, switch models mid-conversation, hand bigger questions to a team, and follow along from your phone. macOS and Linux.">
+<link rel="canonical" href="https://daidong.github.io/DIR-Agent/">
+<link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+<link rel="apple-touch-icon" href="assets/icon.png">
+<meta name="theme-color" content="#f6f1e7">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Research Pilot">
+<meta property="og:title" content="Research Pilot — a research workspace that remembers">
+<meta property="og:description" content="Claude Code, Codex and PIAgent in one desktop app, with a Paper Wiki and project memory that last beyond the chat. macOS and Linux.">
+<meta property="og:url" content="https://daidong.github.io/DIR-Agent/">
+<meta property="og:image" content="https://daidong.github.io/DIR-Agent/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Research Pilot — a research workspace that remembers">
+<meta name="twitter:description" content="Claude Code, Codex and PIAgent in one desktop app, with a Paper Wiki and project memory that last beyond the chat.">
+<meta name="twitter:image" content="https://daidong.github.io/DIR-Agent/assets/img/og.png">
+<link rel="preload" href="assets/fonts/Inter-Variable-Latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Literata-Variable-Latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Research Pilot","applicationCategory":"DeveloperApplication","operatingSystem":"macOS (Apple Silicon), Linux (Ubuntu/Debian, x86-64 and ARM64)","url":"https://daidong.github.io/DIR-Agent/","downloadUrl":"https://github.com/daidong/DIR-Agent/releases/latest","description":"A desktop workspace for doing research with Claude Code, Codex and the built-in PIAgent, with a Paper Wiki and project memory.","video":{"@type":"VideoObject","name":"Research Pilot Launch Video","embedUrl":"https://www.youtube.com/embed/RheGeG1U5no","thumbnailUrl":"https://i.ytimg.com/vi/RheGeG1U5no/maxresdefault.jpg","uploadDate":"2026-11-19"}}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="top">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="Research Pilot home">
+      <img src="assets/icon.svg" alt="" width="30" height="30">
+      <span>Research Pilot</span>
+    </a>
+    <nav aria-label="Main">
+      <a href="#features">Features</a>
+      <a href="#film">Film</a>
+      <a href="#start">Get started</a>
+      <a href="#faq">FAQ</a>
+      <a class="gh" href="https://github.com/daidong/DIR-Agent" aria-label="Research Pilot on GitHub">
+        <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.23 1.88.87 2.34.67.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.13 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.11.16 1.93.08 2.13.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        <span>GitHub</span>
+      </a>
+      <a class="btn btn-primary btn-small" href="#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <a class="release-pill" href="https://github.com/daidong/DIR-Agent/releases/latest" data-release-pill>
+        <span class="dot"></span><span data-release-label>Latest release on GitHub</span><span aria-hidden="true">→</span>
+      </a>
+      <h1>A research workspace<br>that <em>remembers.</em></h1>
+      <p class="lede">Research Pilot puts Claude Code, Codex and its own PIAgent in one desktop app — and keeps your papers, decisions and evidence after the conversation ends.</p>
+      <div class="cta">
+        <a class="btn btn-primary btn-large" href="#download" data-primary-download>
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span data-primary-label>Download</span>
+        </a>
+        <a class="btn btn-ghost btn-large" href="#film">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5Z" fill="currentColor"/></svg>
+          Watch the film
+        </a>
+      </div>
+      <p class="fineprint" data-primary-note>macOS (Apple Silicon) · Ubuntu / Debian (x86-64, ARM64)</p>
+    </div>
+    <figure class="hero-shot">
+      <img class="hero-img" src="assets/img/hero.webp" width="2000" height="1113" alt="The Research Pilot desktop app with a running research team in the conversation, and the same conversation open on a phone" fetchpriority="high">
+    </figure>
+  </div>
+  <div class="wrap works-with" aria-label="Works with">
+    <span class="label">Works with</span>
+    <span>Claude Code</span><span>Codex</span><span>Claude &amp; ChatGPT subscriptions</span><span>GitHub Copilot</span><span>Anthropic &amp; OpenAI API keys</span><span>Your own model server</span>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="wrap narrow center">
+    <p class="kicker">Why</p>
+    <h2>Monday, you explain your project.<br>Tuesday, you explain it again.</h2>
+    <p>AI agents are good at research work, but each chat starts from nothing. Research Pilot gives every agent in a project the same papers, the same Paper Wiki and the same memory of what you decided — with dates and sources you can check.</p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="features">
+  <div class="wrap">
+
+    <article class="feature">
+      <div class="feature-copy">
+        <p class="kicker">Literature</p>
+        <h3>Ask your papers.<br>Check the answer against the source.</h3>
+        <p>Open a paper in the Literature tab and ask the assistant about it, or about your whole library. Answers quote the paper, and the Paper Wiki keeps verbatim excerpts beside every summary, so you can check a claim in one glance.</p>
+        <ul class="ticks">
+          <li>Search academic indexes and import papers into your library</li>
+          <li>A Paper Wiki shared across your projects, with source excerpts</li>
+          <li>Add a PDF as a paper’s full text</li>
+        </ul>
+      </div>
+      <figure class="shot"><img src="assets/img/literature.webp" width="2000" height="1251" loading="lazy" alt="The Literature tab with the FActScore paper open; the assistant’s answer quotes the abstract, and the same sentence is highlighted in the Paper Wiki’s Sources margin"></figure>
+    </article>
+
+    <article class="feature flip">
+      <div class="feature-copy">
+        <p class="kicker">Memory</p>
+        <h3>It remembers what you decided.</h3>
+        <p>Agents save the decisions, preferences and lessons worth keeping — each with its date, the conversation it came from and the context it applies to. Next week, a new conversation starts from them instead of from zero.</p>
+        <ul class="ticks">
+          <li>Browse, correct or forget any memory in the Knowledge tab</li>
+          <li>Tell an agent not to remember something, and it won’t</li>
+          <li>Memories point back to their sources; they are not taken as fact</li>
+        </ul>
+      </div>
+      <figure class="shot"><img src="assets/img/memory-list.webp" width="2000" height="1251" loading="lazy" alt="The Knowledge tab listing five project memories, each with its date"></figure>
+    </article>
+
+    <article class="feature">
+      <div class="feature-copy">
+        <p class="kicker">Every agent</p>
+        <h3>One memory for PIAgent, Claude Code and Codex.</h3>
+        <p>Run Claude Code and Codex in their own tabs, or work with the built-in PIAgent. They share the project’s papers, Wiki and memory, and Recap lists every session in the project, whichever agent ran it.</p>
+        <ul class="ticks">
+          <li>Claude Code and Codex run as their real CLIs, with your login</li>
+          <li>PIAgent can read earlier Claude Code and Codex sessions</li>
+          <li>Split panes keep a conversation beside your files</li>
+        </ul>
+      </div>
+      <figure class="shot"><img src="assets/img/recall.webp" width="2000" height="1251" loading="lazy" alt="PIAgent’s answer naming a Codex session and a Claude Code session, matched by numbers to their rows in Recap"></figure>
+    </article>
+
+    <article class="feature flip">
+      <div class="feature-copy">
+        <p class="kicker">Models</p>
+        <h3>Switch models mid-conversation.</h3>
+        <p>Pick any model PIAgent can reach — a Claude, ChatGPT or GitHub Copilot subscription you already pay for, an Anthropic or OpenAI API key, or a model on your own server — and keep the same conversation going. Every reply is labelled with the model that wrote it.</p>
+        <ul class="ticks">
+          <li>Subscription logins are shared with the Claude Code and Codex CLIs</li>
+          <li>Set the reasoning effort per conversation</li>
+          <li>Usage rings show how much of your plan is left</li>
+        </ul>
+      </div>
+      <figure class="shot"><img src="assets/img/models.webp" width="2000" height="1251" loading="lazy" alt="One conversation with two replies, one labelled sub: claude-opus-5-5 and one labelled api: gpt-6.2-sol"></figure>
+    </article>
+
+    <article class="feature">
+      <div class="feature-copy">
+        <p class="kicker">Teams</p>
+        <h3>Hand bigger questions to a team.</h3>
+        <p>Ask PIAgent for a team and it drafts a brief: the goal, the scope, the model, the permissions, and when the team must ask you. Nothing runs until you click <strong>Start team</strong>. Then members, messages and results stay with the conversation.</p>
+        <ul class="ticks">
+          <li>Research teams investigate; manuscript teams help you revise your draft</li>
+          <li>Answer a team’s questions from the card — or from your phone</li>
+          <li>Every step and result is recorded</li>
+        </ul>
+      </div>
+      <figure class="shot"><img src="assets/img/team-brief.webp" width="2000" height="1251" loading="lazy" alt="A Team brief card listing the goal, scope, model, permissions and when the team asks you, with a Start team button"></figure>
+    </article>
+
+    <article class="feature flip">
+      <div class="feature-copy">
+        <p class="kicker">Computer use · macOS</p>
+        <h3>It can use your browser, too.</h3>
+        <p>With your approval, PIAgent can work in apps on your Mac — for example, fetch a PDF from a publisher page in your own signed-in Chrome, in the background. The conversation shows whenever a desktop connection is active, with a button to stop it.</p>
+        <ul class="ticks">
+          <li>Approve per turn or per conversation</li>
+          <li>Downloaded PDFs can go straight into your library</li>
+          <li>macOS only for now</li>
+        </ul>
+      </div>
+      <figure class="shot bare"><img src="assets/img/computer-use.webp" width="2000" height="758" loading="lazy" alt="PIAgent clicking the PDF button on the ACL Anthology page in Chrome, beside the Research Pilot window"></figure>
+    </article>
+
+    <article class="feature">
+      <div class="feature-copy">
+        <p class="kicker">Phone</p>
+        <h3>Pick it up on your phone.</h3>
+        <p>Pair your phone once and follow or drive the same sessions away from your desk: read replies, send the next message, change the model, follow a team and answer its questions. Your computer does the work; the phone is a window into it.</p>
+        <ul class="ticks">
+          <li>PIAgent, Claude Code and Codex sessions</li>
+          <li>Notifications when a team needs you</li>
+          <li>Connects over Tailscale; your computer must stay on</li>
+        </ul>
+      </div>
+      <figure class="shot bare"><img src="assets/img/phone.webp" width="2000" height="1218" loading="lazy" alt="The same PIAgent conversation on the desktop and on a phone, with the newest reply shown on both"></figure>
+    </article>
+
+  </div>
+</section>
+
+<!-- FILM -->
+<section id="film" class="film">
+  <div class="wrap narrow center">
+    <p class="kicker">The film</p>
+    <h2>See it in action</h2>
+    <p>A researcher’s week, filmed in the real app.</p>
+  </div>
+  <div class="wrap video-wrap">
+    <div class="video" data-youtube="RheGeG1U5no">
+      <button type="button" class="video-play" aria-label="Play the Research Pilot launch film (loads YouTube)">
+        <img src="assets/img/video-poster.webp" width="1920" height="1080" alt="">
+        <span class="play-btn" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M8 5v14l11-7Z" fill="currentColor"/></svg></span>
+        <span class="video-note">Plays from YouTube</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD -->
+<section id="download" class="download">
+  <div class="wrap">
+    <div class="center narrow">
+      <p class="kicker">Download</p>
+      <h2>Get Research Pilot</h2>
+      <p data-release-detail>The latest release is on GitHub.</p>
+    </div>
+    <div class="platforms">
+      <div class="platform" data-platform="mac">
+        <div class="platform-head">
+          <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.5-1-2.5-3.9ZM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.5 2.8-1.3Z"/></svg>
+          <div><h3>macOS</h3><p>Apple Silicon (M1 or later)</p></div>
+          <span class="recommended" hidden>Recommended for you</span>
+        </div>
+        <div class="assets">
+          <a class="btn btn-primary" data-asset="mac-arm64.dmg" href="https://github.com/daidong/DIR-Agent/releases/latest">Download .dmg</a>
+          <a class="btn btn-ghost" data-asset="mac-arm64.zip" href="https://github.com/daidong/DIR-Agent/releases/latest">.zip</a>
+        </div>
+        <p class="hint">Open the DMG and drag Research Pilot into Applications.</p>
+      </div>
+      <div class="platform" data-platform="linux-x64">
+        <div class="platform-head">
+          <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" fill="currentColor"/><circle cx="12" cy="4.6" r="1.6" fill="currentColor"/><circle cx="5.6" cy="15.7" r="1.6" fill="currentColor"/><circle cx="18.4" cy="15.7" r="1.6" fill="currentColor"/></svg>
+          <div><h3>Linux · x86-64</h3><p>Ubuntu / Debian, Intel or AMD</p></div>
+          <span class="recommended" hidden>Recommended for you</span>
+        </div>
+        <div class="assets">
+          <a class="btn btn-primary" data-asset="linux-amd64.deb" href="https://github.com/daidong/DIR-Agent/releases/latest">Download .deb</a>
+          <a class="btn btn-ghost" data-asset="linux-x86_64.AppImage" href="https://github.com/daidong/DIR-Agent/releases/latest">AppImage</a>
+        </div>
+        <p class="hint"><code>sudo apt install ./<span data-file="linux-amd64.deb">Research-Pilot-…-linux-amd64.deb</span></code></p>
+      </div>
+      <div class="platform" data-platform="linux-arm64">
+        <div class="platform-head">
+          <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" fill="currentColor"/><circle cx="12" cy="4.6" r="1.6" fill="currentColor"/><circle cx="5.6" cy="15.7" r="1.6" fill="currentColor"/><circle cx="18.4" cy="15.7" r="1.6" fill="currentColor"/></svg>
+          <div><h3>Linux · ARM64</h3><p>Ubuntu / Debian on ARM</p></div>
+          <span class="recommended" hidden>Recommended for you</span>
+        </div>
+        <div class="assets">
+          <a class="btn btn-primary" data-asset="linux-arm64.deb" href="https://github.com/daidong/DIR-Agent/releases/latest">Download .deb</a>
+          <a class="btn btn-ghost" data-asset="linux-arm64.AppImage" href="https://github.com/daidong/DIR-Agent/releases/latest">AppImage</a>
+        </div>
+        <p class="hint"><code>sudo apt install ./<span data-file="linux-arm64.deb">Research-Pilot-…-linux-arm64.deb</span></code></p>
+      </div>
+    </div>
+    <p class="center fine">
+      Windows and Intel Macs are not supported yet.
+      <a href="https://github.com/daidong/DIR-Agent/releases" >All releases</a> ·
+      <a href="https://github.com/daidong/DIR-Agent/releases/latest" data-notes-link>Release notes</a> ·
+      <a href="https://github.com/daidong/DIR-Agent/blob/main/docs/installation.md">Installation guide</a>
+    </p>
+  </div>
+</section>
+
+<!-- GET STARTED -->
+<section id="start" class="start">
+  <div class="wrap">
+    <div class="center narrow">
+      <p class="kicker">Get started</p>
+      <h2>Up and running in a few minutes</h2>
+    </div>
+    <ol class="steps">
+      <li><span class="n">1</span><h3>Install</h3><p>Download the package for your computer. The app brings its own runtime — no Node.js, Docker or server to set up.</p></li>
+      <li><span class="n">2</span><h3>Connect a model</h3><p>Sign in once with the Claude Code or Codex CLI, add an Anthropic or OpenAI API key, or point PIAgent at your own model server. The setup checklist says what is missing.</p></li>
+      <li><span class="n">3</span><h3>Open a project folder</h3><p>An existing repository or an empty folder. Your files stay where they are; research records live in <code>~/.pipilot</code>.</p></li>
+      <li><span class="n">4</span><h3>Ask</h3><p>Try: <em>“Explain this project and the research material already saved for it. Suggest one useful next step.”</em></p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq">
+  <div class="wrap narrow">
+    <div class="center"><p class="kicker">FAQ</p><h2>Questions</h2></div>
+    <details><summary>What do I need to use it?</summary>
+      <p>A Mac with Apple Silicon, or Ubuntu/Debian on x86-64 or ARM64, and access to at least one model: a Claude or ChatGPT subscription signed in through the Claude Code or Codex CLI, a GitHub Copilot subscription, an Anthropic or OpenAI API key, or a compatible model server you run yourself. Model providers’ own charges and quotas apply.</p></details>
+    <details><summary>Where is my data?</summary>
+      <p>Research records — papers, the Paper Wiki, notes and memory — are stored on your computer under <code>~/.pipilot</code>. Your documents and code stay in the project folders you choose. Local storage is not offline processing: the model providers and search services you configure receive the requests needed for their work.</p></details>
+    <details><summary>What can the agents do on my computer?</summary>
+      <p>Research Pilot launches Claude Code and Codex in unattended mode (<code>--dangerously-skip-permissions</code> and <code>--dangerously-bypass-approvals-and-sandbox</code>). They can run commands, edit or delete files and use the network with your user account’s permissions, without asking for each action. Use them for trusted tasks and keep backups. PIAgent asks before risky commands, and desktop control (computer use) needs your approval.</p></details>
+    <details><summary>Can I use my own or a local model?</summary>
+      <p>Yes. PIAgent can use a compatible model endpoint you host, alongside subscription logins and API keys. Claude Code and Codex use their own CLIs’ model settings.</p></details>
+    <details><summary>Does it work on Windows or Intel Macs?</summary>
+      <p>Not yet. Packages are built for macOS on Apple Silicon and for Ubuntu/Debian on x86-64 and ARM64. Computer use is available on macOS only.</p></details>
+    <details><summary>How does the phone companion connect?</summary>
+      <p>Install Tailscale on your computer and phone, turn on <em>Settings → Phone</em> in the desktop app, and scan the pairing code. Each phone gets its own key, which you can remove at any time. The computer must stay on.</p></details>
+    <details><summary>Where do I report a problem or ask for a feature?</summary>
+      <p>Open an issue on <a href="https://github.com/daidong/DIR-Agent/issues">GitHub</a>.</p></details>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="wrap narrow center">
+    <img src="assets/icon.svg" width="64" height="64" alt="">
+    <h2>Your research, remembered.</h2>
+    <div class="cta center-cta">
+      <a class="btn btn-primary btn-large" href="#download">Download Research Pilot</a>
+      <a class="btn btn-ghost btn-large" href="https://github.com/daidong/DIR-Agent">View on GitHub</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="brand small"><img src="assets/icon.svg" alt="" width="22" height="22"><span>Research Pilot</span></div>
+    <nav aria-label="Footer">
+      <a href="https://github.com/daidong/DIR-Agent">GitHub</a>
+      <a href="https://github.com/daidong/DIR-Agent/releases">Releases</a>
+      <a href="https://github.com/daidong/DIR-Agent/blob/main/docs/installation.md">Installation</a>
+      <a href="https://github.com/daidong/DIR-Agent/issues">Issues</a>
+      <a href="https://youtu.be/RheGeG1U5no">Film on YouTube</a>
+    </nav>
+    <p class="muted">Claude Code, Codex, ChatGPT, GitHub Copilot and other names belong to their owners. Research Pilot is not affiliated with Anthropic, OpenAI or GitHub.</p>
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>
