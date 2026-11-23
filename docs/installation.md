@@ -1,4 +1,4 @@
-# Install and configure Research Pilot 0.8.8
+# Install and configure Research Pilot 0.8.12
 
 [Back to the product overview](../README.md)
 
@@ -6,13 +6,13 @@ Use only the sections relevant to your setup. PI Agent, Claude Code and Codex ar
 
 ## 1. Choose the right download
 
-The filenames and direct links below are for **0.8.8**. For later releases, use the [latest release page](https://github.com/daidong/DIR-Agent/releases/latest) and substitute that version in the commands.
+The filenames and direct links below are for **0.8.12**. For later releases, use the [latest release page](https://github.com/daidong/DIR-Agent/releases/latest) and substitute that version in the commands.
 
 | Your computer | Recommended download | Alternative |
 |---|---|---|
-| macOS, Apple Silicon (M-series) | [mac-arm64.dmg](https://github.com/daidong/DIR-Agent/releases/download/v0.8.8/Research-Pilot-0.8.8-mac-arm64.dmg) | [mac-arm64.zip](https://github.com/daidong/DIR-Agent/releases/download/v0.8.8/Research-Pilot-0.8.8-mac-arm64.zip) |
-| Ubuntu/Debian, Intel or AMD 64-bit | [linux-amd64.deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.8/Research-Pilot-0.8.8-linux-amd64.deb) | [linux-x86_64.AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.8/Research-Pilot-0.8.8-linux-x86_64.AppImage) |
-| Ubuntu/Debian, ARM 64-bit | [linux-arm64.deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.8/Research-Pilot-0.8.8-linux-arm64.deb) | [linux-arm64.AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.8/Research-Pilot-0.8.8-linux-arm64.AppImage) |
+| macOS, Apple Silicon (M-series) | [mac-arm64.dmg](https://github.com/daidong/DIR-Agent/releases/download/v0.8.12/Research-Pilot-0.8.12-mac-arm64.dmg) | [mac-arm64.zip](https://github.com/daidong/DIR-Agent/releases/download/v0.8.12/Research-Pilot-0.8.12-mac-arm64.zip) |
+| Ubuntu/Debian, Intel or AMD 64-bit | [linux-amd64.deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.12/Research-Pilot-0.8.12-linux-amd64.deb) | [linux-x86_64.AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.12/Research-Pilot-0.8.12-linux-x86_64.AppImage) |
+| Ubuntu/Debian, ARM 64-bit | [linux-arm64.deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.12/Research-Pilot-0.8.12-linux-arm64.deb) | [linux-arm64.AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.12/Research-Pilot-0.8.12-linux-arm64.AppImage) |
 
 **Not sure about your CPU?** On macOS, open **Apple menu → About This Mac** and look at **Chip**. On Linux, run:
 
@@ -23,15 +23,15 @@ uname -m
 - `x86_64`: use the **amd64 deb** or **x86_64 AppImage**. These names describe the same CPU architecture.
 - `aarch64` or `arm64`: use **arm64**.
 
-**Windows is not supported.** Version 0.8.8 also does not include an Intel Mac installer. Linux installation checks were performed on Ubuntu 24.04; other distributions may need different system packages. A Linux graphical desktop session is needed for the desktop UI.
+**Windows is not supported.** Version 0.8.12 also does not include an Intel Mac installer. Linux installation checks were performed on Ubuntu 24.04; other distributions may need different system packages. A Linux graphical desktop session is needed for the desktop UI.
 
-On the release page, choose one of the six **`Research-Pilot-0.8.8-…`** assets listed above. GitHub's automatic **Source code (zip)** and **Source code (tar.gz)** entries contain the public documentation snapshot for this release; they do not contain the application source or an installer.
+On the release page, choose one of the six **`Research-Pilot-0.8.12-…`** assets listed above. GitHub's automatic **Source code (zip)** and **Source code (tar.gz)** entries contain the public documentation snapshot for this release; they do not contain the application source or an installer.
 
 ## 2. Install Research Pilot
 
 ### macOS: Apple Silicon
 
-1. Download `Research-Pilot-0.8.8-mac-arm64.dmg`.
+1. Download `Research-Pilot-0.8.12-mac-arm64.dmg`.
 2. Double-click the dmg to open it.
 3. Drag **Research Pilot** into **Applications**.
 4. Eject the mounted disk image.
@@ -50,7 +50,7 @@ For **x86_64 / amd64**:
 ```bash
 cd ~/Downloads
 sudo apt update
-sudo apt install ./Research-Pilot-0.8.8-linux-amd64.deb
+sudo apt install ./Research-Pilot-0.8.12-linux-amd64.deb
 ```
 
 For **arm64**:
@@ -58,7 +58,7 @@ For **arm64**:
 ```bash
 cd ~/Downloads
 sudo apt update
-sudo apt install ./Research-Pilot-0.8.8-linux-arm64.deb
+sudo apt install ./Research-Pilot-0.8.12-linux-arm64.deb
 ```
 
 Use **one** of these blocks. Keep the `./` before the filename: it tells apt to install the downloaded local file. Using apt also resolves the declared system dependencies.
@@ -91,22 +91,22 @@ sudo apt update
 sudo apt install libfuse2t64 zlib1g-dev
 ```
 
-On older Ubuntu releases, the FUSE package is named `libfuse2` rather than `libfuse2t64`. The 0.8.8 arm64 AppImage additionally requires `zlib1g-dev` because its bundled runtime looks for `libz.so`; installing `zlib1g` alone does not provide that filename.
+On older Ubuntu releases, the FUSE package is named `libfuse2` rather than `libfuse2t64`. The 0.8.12 arm64 AppImage additionally requires `zlib1g-dev` because its bundled runtime looks for `libz.so`; installing `zlib1g` alone does not provide that filename.
 
 Then make the downloaded file executable and run it. For **x86_64**:
 
 ```bash
 cd ~/Downloads
-chmod +x Research-Pilot-0.8.8-linux-x86_64.AppImage
-./Research-Pilot-0.8.8-linux-x86_64.AppImage
+chmod +x Research-Pilot-0.8.12-linux-x86_64.AppImage
+./Research-Pilot-0.8.12-linux-x86_64.AppImage
 ```
 
 For **arm64**:
 
 ```bash
 cd ~/Downloads
-chmod +x Research-Pilot-0.8.8-linux-arm64.AppImage
-./Research-Pilot-0.8.8-linux-arm64.AppImage
+chmod +x Research-Pilot-0.8.12-linux-arm64.AppImage
+./Research-Pilot-0.8.12-linux-arm64.AppImage
 ```
 
 If startup fails specifically because of Chromium's sandbox on Ubuntu 24.04, prefer the deb. An AppImage fallback is to append `--no-sandbox` to the launch command; this disables Chromium's sandbox for that launch.
@@ -114,7 +114,7 @@ If startup fails specifically because of Chromium's sandbox on Ubuntu 24.04, pre
 If FUSE is unavailable, you can extract the AppImage and run its contents. For example, in a directory where you want to keep the application:
 
 ```bash
-/path/to/Research-Pilot-0.8.8-linux-arm64.AppImage --appimage-extract
+/path/to/Research-Pilot-0.8.12-linux-arm64.AppImage --appimage-extract
 ./squashfs-root/research-pilot
 ```
 
@@ -154,7 +154,7 @@ Choose a sign-in method offered by the CLI and finish authentication. Once it wo
 
 ### Built-in PI agent
 
-The **PIAgent** tab uses a runtime bundled with Research Pilot, so it does not need a separate PI executable. Configure an available model and authentication under **Settings → PI Agent**. The app can detect supported local Claude/Codex logins or use provider API keys configured in this section. You can also sign in to GitHub Copilot under **Settings → Subscriptions**. Available models depend on your configuration and account access.
+The **PIAgent** tab uses a runtime bundled with Research Pilot, so it does not need a separate PI executable. PIAgent can use a supported local Claude/Codex login or GitHub Copilot (**Settings → Subscriptions**), an Anthropic or OpenAI API key or your own model server (**Settings → API keys & local**), or Gemini models on your Google Cloud project (**Settings → Google Cloud**). Choose the default model under **Settings → Models**. Available models depend on your configuration and account access.
 
 **Settings → Subscriptions** also provides supported Claude Code and Codex CLI installation, update and sign-in actions.
 
@@ -212,7 +212,7 @@ You can install Research Pilot and browse saved material before adding API keys.
 
 #### Literature discovery and full text
 
-Enter these values in **Settings → Literature & full-text**, then click **Save**. The names below match the app's fields; the identifiers in parentheses help when diagnosing configuration problems.
+Enter these values in **Settings → Literature**, then click **Save**. The names below match the app's fields; the identifiers in parentheses help when diagnosing configuration problems.
 
 | Priority | Field | How it helps / behavior without it | Where to get it |
 | --- | --- | --- | --- |
@@ -228,7 +228,7 @@ These services help discover and retrieve available research material; credentia
 
 #### General web search for PI Agent
 
-For PI Agent to search websites beyond academic indexes, configure **Settings → PI Agent → Brave Search key** (`BRAVE_API_KEY`). We strongly recommend this for research involving current websites, project documentation, or other non-paper sources.
+For PI Agent to search websites beyond academic indexes, configure the **Brave Search key** (`BRAVE_API_KEY`) under **Settings → Web search**. We strongly recommend this for research involving current websites, project documentation, or other non-paper sources.
 
 Create an account in the [Brave Search API dashboard](https://api-dashboard.search.brave.com/), activate a suitable Search API plan, and create an API key as described in [Brave's authentication guide](https://api-dashboard.search.brave.com/documentation/guides/authentication). Paste it into the app and click **Save**.
 
@@ -236,14 +236,14 @@ Without this key, PI's `web_search` reports that general web search is unavailab
 
 #### Model-provider credentials for PI Agent
 
-PI Agent also needs access to a language model. If **Settings → PI Agent** detects a supported local Claude/Codex login that works with your selected model, you can use that authentication. Otherwise, configure **one** of the provider keys below and choose an available model for that provider.
+PI Agent also needs access to a language model. If **Settings → Subscriptions** shows a supported local Claude/Codex login or GitHub Copilot sign-in that works with your selected model, you can use that authentication. Otherwise, configure **one** of the options below and choose an available model under **Settings → Models**.
 
-| Model family | Field in Settings → PI Agent | Get a key |
+| Model family | Where to configure | Get access |
 | --- | --- | --- |
-| Claude | **Anthropic API key** (`ANTHROPIC_API_KEY`) | [Anthropic Console keys](https://console.anthropic.com/settings/keys); [API setup documentation](https://platform.claude.com/docs/en/api/overview). |
-| OpenAI | **OpenAI API key** (`OPENAI_API_KEY`) | [OpenAI API keys](https://platform.openai.com/api-keys); use a standard application API key as described in the [API authentication documentation](https://developers.openai.com/api/reference/overview#authentication). |
-| Gemini | **Google API key** (`GOOGLE_API_KEY`) | [Google AI Studio](https://aistudio.google.com/apikey); follow the [Gemini API key setup](https://ai.google.dev/gemini-api/docs/api-key). |
-| DeepSeek | **DeepSeek API key** (`DEEPSEEK_API_KEY`) | [DeepSeek platform](https://platform.deepseek.com/); follow the [API getting-started guide](https://api-docs.deepseek.com/). |
+| Claude | **Settings → API keys & local → Anthropic API key** (`ANTHROPIC_API_KEY`) | [Anthropic Console keys](https://console.anthropic.com/settings/keys); [API setup documentation](https://platform.claude.com/docs/en/api/overview). |
+| OpenAI | **Settings → API keys & local → OpenAI API key** (`OPENAI_API_KEY`) | [OpenAI API keys](https://platform.openai.com/api-keys); use a standard application API key as described in the [API authentication documentation](https://developers.openai.com/api/reference/overview#authentication). |
+| Gemini (Vertex AI) | **Settings → Google Cloud**: enter your Cloud project and choose its Gemini chat models. No key is stored; the app uses Application Default Credentials. | Install the [gcloud CLI](https://cloud.google.com/sdk/docs/install), run `gcloud auth application-default login`, and enable the Vertex AI API on the project. Charges go to that project. |
+| Your own server | **Settings → API keys & local**: add an OpenAI-compatible endpoint (for example Ollama, vLLM or LM Studio) | Your server's documentation. |
 
 Click **Save**, select a model available to your account, and try a short PI conversation. Configure standalone Claude Code or Codex authentication using the CLI instructions in section 3. Literature-source keys do not authenticate a language model, and a model-provider key does not enable Brave Search.
 
@@ -289,7 +289,7 @@ Removing the application is separate from deleting `~/.pipilot` or your workspac
 
 Research Pilot can share its running agent sessions with your iPhone or iPad. The desktop app serves a small web app to the phone; the phone is only a window. Agents, files, and research data stay on your computer, so the desktop app must remain open while you use the phone.
 
-From the phone you can select a workspace, start **Claude**, **Codex**, or **PIAgent**, follow a live session as it streams, send prompts into the running agent, answer approval questions, and browse project files, literature, knowledge and session history. The **Team** tab follows Research and Manuscript Teams and opens their assistant conversations. You can also pause or resume a resident researcher, request a briefing, or talk to its assistant. Optional push notifications tell you when an agent has replied.
+From the phone you can select a workspace, start **Claude**, **Codex**, or **PIAgent**, follow a live session as it streams, send prompts into the running agent, answer approval questions, and browse project files, literature, knowledge and session history. The **Team** tab follows Research and Manuscript Teams; you talk to a team in the PIAgent conversation that owns it. You can also pause or resume a resident researcher, request a briefing, or talk to its assistant. Optional push notifications tell you when an agent has replied.
 
 This feature is off by default.
 
@@ -310,7 +310,7 @@ For HTTPS, two settings in the [Tailscale admin console](https://login.tailscale
 ### Connect your phone
 
 1. Make sure Tailscale is connected on both the computer and the phone.
-2. In Research Pilot, open **Settings → Phone (iOS companion)** and turn on **Share sessions to your phone**.
+2. In Research Pilot, open **Settings → Phone** and turn on **Share sessions to your phone**.
 3. Check the status line. It should read **HTTPS, Tailscale**. If it reads **no Tailscale**, the app could not find the Tailscale command; confirm Tailscale is installed and running, then toggle the switch again. If it reads **HTTP**, check the two DNS settings above.
 4. Click **Show pairing code**. Scan the QR code with the phone's camera, or enter the six-digit code on the phone. Each code pairs one phone, once, within ten minutes.
 5. On the phone, use **Share → Add to Home Screen**, then open Research Pilot from its icon for a full-screen view. Open the phone app's menu and choose **Enable push notifications** if you want reply alerts.
@@ -341,7 +341,7 @@ Pairing is per computer. Repeat these steps if you install Research Pilot on ano
 | Phone settings report `HTTP` instead of `HTTPS` | In the [Tailscale admin DNS page](https://login.tailscale.com/admin/dns), enable **MagicDNS** and **HTTPS Certificates**, then toggle the phone switch again. Reading sessions works over HTTP; Add to Home Screen and push notifications need HTTPS. |
 | Phone shows a pairing screen again | The device may have been revoked or its browser storage cleared. Reopen Settings → Phone, generate a new pairing code, and pair the device again. |
 | Python or MarkItDown is missing | These affect the optional features described above. Install the tool you need, reopen the app, and click **Recheck**. |
-| Literature search fails or returns limited results | Inspect the provider error and its credentials/rate limits in **Literature & full-text**. Full-text availability varies by paper. |
+| Literature search fails or returns limited results | Inspect the provider error and its credentials/rate limits in **Settings → Literature**. Full-text availability varies by paper. |
 
 For a reproducible problem, use **Export diagnostics** in Settings → Setup and open an [issue](https://github.com/daidong/DIR-Agent/issues). Include your Research Pilot version, operating system, CPU architecture, package type, exact error, and the steps that triggered it. Review diagnostic files before posting publicly and omit credentials or private research content.
 
