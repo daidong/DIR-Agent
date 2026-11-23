@@ -6,10 +6,10 @@
 Run Claude Code, Codex, and the built-in PIAgent side by side. What you read and decide stays attached to the project, with sources you can check long after the chat is closed.</p>
 
 <p align="center">
-<a href="https://github.com/daidong/DIR-Agent/releases/tag/v0.8.12"><strong>Download 0.8.12</strong></a> ·
+<a href="https://github.com/daidong/DIR-Agent/releases/tag/v0.8.13"><strong>Download 0.8.13</strong></a> ·
 <a href="https://daidong.github.io/DIR-Agent/">Website</a> ·
 <a href="https://youtu.be/RheGeG1U5no">Watch the demo</a> ·
-<a href="https://github.com/daidong/DIR-Agent/releases/tag/v0.8.12">Release notes</a> ·
+<a href="https://github.com/daidong/DIR-Agent/releases/tag/v0.8.13">Release notes</a> ·
 <a href="https://github.com/daidong/DIR-Agent/issues">Report a problem</a>
 </p>
 
@@ -22,14 +22,14 @@ Works with Claude and ChatGPT subscriptions, GitHub Copilot, Anthropic and OpenA
 
 **A new terminal shouldn't mean starting from scratch.** Jump between Claude Code, Codex, and a pile of PDFs, and context scatters fast. Research Pilot connects every agent on a project to the same saved papers, Paper Wiki, and past decisions, with dates and links back to where each note came from.
 
-## New in 0.8.12
+## New in 0.8.13
 
-- **Long agent turns take less room.** The thinking and tool calls between two pieces of visible text fold into one line. Open it to inspect every step, error, edited file, and thought. Failed steps stay visible, and a short recap lists what happened while you were away. The phone folds the same way.
-- **Gemini through Google Cloud Vertex AI.** **Settings → Google Cloud** connects your own Vertex AI project with Application Default Credentials and adds its Gemini chat models to PIAgent.
-- **Settings and model picker.** PIAgent settings are split into focused pages (Models, API keys & local, Google Cloud, Web search, Desktop control). The model picker is searchable and groups models by subscription, API & cloud, and self-hosted.
-- **Linux users of 0.8.8–0.8.11:** those Linux packages were withdrawn because they were packaged incorrectly. Install 0.8.12.
+- **Updates from inside the app.** Research Pilot now checks for new releases, downloads the right installer in the background and verifies it. When it is ready, an **Update** button appears at the top right, next to the theme button. Updating asks first and lists the conversations, terminals and tasks that will close; the app then installs the new version and reopens. On Linux, the deb asks for your password to install the package; an AppImage is replaced in place.
+- **The whole system moves to the new version.** An update also restarts the background services, so nothing keeps running the old version. If you install a new version by hand while services of the previous one are still running, Research Pilot asks at its next start whether to restart them.
+- **Clearer message when a reply is stopped.** When Claude's safety filter stops a reply, PIAgent now says so and tells you how to try again, instead of reporting an unknown error.
+- **Upgrading from 0.8.12 or earlier:** those versions cannot update themselves. Install 0.8.13 once by hand (see [Upgrade](docs/installation.md#upgrade-an-existing-installation)); later versions arrive through the Update button.
 
-[Full release notes](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.12)
+[Full release notes](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.13)
 
 ## What it does
 
@@ -113,11 +113,11 @@ A 100-second tour recorded in the actual app.
 
 | Computer | Recommended package | Alternative |
 | --- | --- | --- |
-| macOS · Apple Silicon (M1 or later) | [DMG](https://github.com/daidong/DIR-Agent/releases/download/v0.8.12/Research-Pilot-0.8.12-mac-arm64.dmg) | [ZIP](https://github.com/daidong/DIR-Agent/releases/download/v0.8.12/Research-Pilot-0.8.12-mac-arm64.zip) |
-| Ubuntu/Debian · Intel / AMD 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.12/Research-Pilot-0.8.12-linux-amd64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.12/Research-Pilot-0.8.12-linux-x86_64.AppImage) |
-| Ubuntu/Debian · ARM 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.12/Research-Pilot-0.8.12-linux-arm64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.12/Research-Pilot-0.8.12-linux-arm64.AppImage) |
+| macOS · Apple Silicon (M1 or later) | [DMG](https://github.com/daidong/DIR-Agent/releases/download/v0.8.13/Research-Pilot-0.8.13-mac-arm64.dmg) | [ZIP](https://github.com/daidong/DIR-Agent/releases/download/v0.8.13/Research-Pilot-0.8.13-mac-arm64.zip) |
+| Ubuntu/Debian · Intel / AMD 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.13/Research-Pilot-0.8.13-linux-amd64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.13/Research-Pilot-0.8.13-linux-x86_64.AppImage) |
+| Ubuntu/Debian · ARM 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.13/Research-Pilot-0.8.13-linux-arm64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.13/Research-Pilot-0.8.13-linux-arm64.AppImage) |
 
-On macOS, open the DMG and drag Research Pilot into Applications; the app is signed and notarized by Apple. On Ubuntu/Debian, install the downloaded deb with `sudo apt install ./Research-Pilot-0.8.12-linux-amd64.deb` (use the arm64 filename on ARM). AppImages on Ubuntu 24.04 may need `libfuse2t64`; the arm64 AppImage also needs `zlib1g-dev`.
+On macOS, open the DMG and drag Research Pilot into Applications; the app is signed and notarized by Apple. On Ubuntu/Debian, install the downloaded deb with `sudo apt install ./Research-Pilot-0.8.13-linux-amd64.deb` (use the arm64 filename on ARM). AppImages on Ubuntu 24.04 may need `libfuse2t64`; the arm64 AppImage also needs `zlib1g-dev`.
 
 1. **Install** the package for your OS. The runtime is bundled, so you don't need to install Node.js, Docker, or a separate server.
 2. **Connect a model.** Sign in once with the Claude Code or Codex CLI from a terminal (PIAgent shares that login), sign in to GitHub Copilot under **Settings → Subscriptions**, add an Anthropic or OpenAI API key or your own model server (such as Ollama or vLLM) under **Settings → API keys & local**, or connect Vertex AI under **Settings → Google Cloud**. On first launch a built-in setup check points out anything missing; **Settings → Setup** reopens it any time.
@@ -179,12 +179,12 @@ Research data lives under `~/.pipilot` by default. Your documents and code stay 
 
 Keep in mind that local storage doesn't mean offline execution: prompts and searches still go to whichever model providers, search APIs, and external tools you configure. Credentials, account access and provider charges are configured separately.
 
-Before upgrading, finish active work and quit the app. Replace the application, then reopen it so both the app and bundled services use the new version. Keep a backup of `~/.pipilot` and your project folders; do not delete research data as an upgrade step.
+From 0.8.13 on, new versions arrive through the **Update** button at the top right; updating closes active conversations and tasks on this computer after you confirm. To upgrade by hand (required once from 0.8.12 or earlier), finish active work, quit the app, replace the application and reopen it; if services of the previous version are still running, the app asks to restart them. Keep a backup of `~/.pipilot` and your project folders; do not delete research data as an upgrade step.
 
 ## Help
 
 - [Installation, configuration and troubleshooting](docs/installation.md)
-- [What changed in 0.8.12](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.12) · [All releases](https://github.com/daidong/DIR-Agent/releases)
+- [What changed in 0.8.13](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.13) · [All releases](https://github.com/daidong/DIR-Agent/releases)
 - [Issues](https://github.com/daidong/DIR-Agent/issues) — include app version, OS, CPU, package type and reproduction steps. Remove credentials and private research from diagnostics before sharing.
 
 This public repository hosts application packages, documentation and community issues. The application source is maintained separately. Claude Code, Codex, ChatGPT, GitHub Copilot, Google Cloud and other names belong to their owners; Research Pilot is not affiliated with Anthropic, OpenAI, Google or GitHub.
