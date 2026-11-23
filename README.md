@@ -2,13 +2,13 @@
 
 <h1 align="center">Research Pilot</h1>
 
-<p align="center"><strong>A research workspace that remembers.</strong><br>
-Claude Code, Codex and the built-in PIAgent in one desktop app — with your papers, decisions and evidence kept after the conversation ends.</p>
+<p align="center"><strong>One desk for your agents, your papers, and your notes.</strong><br>
+Run Claude Code, Codex, and the built-in PIAgent side by side. What you read and decide stays attached to the project, with sources you can check long after the chat is closed.</p>
 
 <p align="center">
 <a href="https://github.com/daidong/DIR-Agent/releases/tag/v0.8.12"><strong>Download 0.8.12</strong></a> ·
 <a href="https://daidong.github.io/DIR-Agent/">Website</a> ·
-<a href="https://youtu.be/RheGeG1U5no">Watch the film</a> ·
+<a href="https://youtu.be/RheGeG1U5no">Watch the demo</a> ·
 <a href="https://github.com/daidong/DIR-Agent/releases/tag/v0.8.12">Release notes</a> ·
 <a href="https://github.com/daidong/DIR-Agent/issues">Report a problem</a>
 </p>
@@ -18,13 +18,13 @@ Works with Claude and ChatGPT subscriptions, GitHub Copilot, Anthropic and OpenA
 
 ![Research Pilot on the desktop and on a phone: a PIAgent conversation with a running research team, the project's Recap, and the same session continued on the phone](docs/images/hero.webp)
 
-## Why
+## Why we built it
 
-**Monday, you explain your project. Tuesday, you explain it again.** AI agents are good at research work, but each chat starts from nothing. Research Pilot gives every agent in a project the same papers, the same Paper Wiki and the same memory of what you decided — with dates and sources you can check.
+**A new terminal shouldn't mean starting from scratch.** Jump between Claude Code, Codex, and a pile of PDFs, and context scatters fast. Research Pilot connects every agent on a project to the same saved papers, Paper Wiki, and past decisions, with dates and links back to where each note came from.
 
 ## New in 0.8.12
 
-- **Long agent turns take less room.** The thinking and tool calls between two pieces of visible text fold into one line. Open it to inspect every step, error, edited file and thought. Failed steps stay visible, and a short recap lists what happened while you were away. The phone folds the same way.
+- **Long agent turns take less room.** The thinking and tool calls between two pieces of visible text fold into one line. Open it to inspect every step, error, edited file, and thought. Failed steps stay visible, and a short recap lists what happened while you were away. The phone folds the same way.
 - **Gemini through Google Cloud Vertex AI.** **Settings → Google Cloud** connects your own Vertex AI project with Application Default Credentials and adds its Gemini chat models to PIAgent.
 - **Settings and model picker.** PIAgent settings are split into focused pages (Models, API keys & local, Google Cloud, Web search, Desktop control). The model picker is searchable and groups models by subscription, API & cloud, and self-hosted.
 - **Linux users of 0.8.8–0.8.11:** those Linux packages were withdrawn because they were packaged incorrectly. Install 0.8.12.
@@ -33,81 +33,81 @@ Works with Claude and ChatGPT subscriptions, GitHub Copilot, Anthropic and OpenA
 
 ## What it does
 
-### Ask your papers. Check the answer against the source.
+### See the exact lines behind each answer.
 
-Open a paper in the **Literature** tab and ask the assistant about it, or about your whole library. Answers quote the paper, and the Paper Wiki keeps verbatim excerpts beside every summary, so you can check a claim at a glance.
+Open a paper in **Literature** to ask about a method, a baseline, or how papers in your library compare. Answers quote the text directly, and the Paper Wiki keeps verbatim excerpts next to each summary so you can verify claims without hunting through the PDF.
 
-- Search academic indexes and import papers into your library
-- A Paper Wiki shared across your projects, with source excerpts
-- Add a PDF as a paper's full text
+- Search academic indexes and save papers to your library
+- One Paper Wiki across your projects, backed by verbatim quotes
+- Attach local PDFs as full text for papers in your library
 
 ![The Literature tab with the FActScore paper open; the assistant's answer quotes the abstract, and the same sentence is highlighted in the Paper Wiki's Sources margin](docs/images/literature.webp)
 
-### It remembers what you decided.
+### Keep track of why you made a call.
 
-Agents save the decisions, preferences and lessons worth keeping — each with its date, the conversation it came from and the context it applies to. Next week, a new conversation starts from them instead of from zero.
+Agents record project decisions, preferences, and hard-won lessons along with the date, the session they came from, and when they apply. Come back next week and a new chat picks up with that context already in hand.
 
-- Browse, correct or forget any memory in the **Knowledge** tab
-- Tell an agent not to remember something, and it won't
-- Memories point back to their sources; they are not taken as fact
+- Inspect, edit, or delete any memory in the **Knowledge** tab
+- Say “don't remember this” when something should stay off the record
+- Every entry links back to its source turn rather than standing in as blind fact
 
 ![The Knowledge tab listing project memories, each with its date](docs/images/memory-list.webp)
 
-### One memory for PIAgent, Claude Code and Codex.
+### Claude Code, Codex, and PIAgent on the same project.
 
-Run Claude Code and Codex in their own tabs, or work with the built-in PIAgent. They share the project's papers, Wiki and memory, and **Recap** lists every session in the project, whichever agent ran it.
+Keep Claude Code and Codex in their own terminal tabs alongside the built-in PIAgent. All three draw from the same library and project memory, and **Recap** puts every past session on one timeline no matter which agent ran it.
 
-- Claude Code and Codex run as their real CLIs, with your login
-- PIAgent can read earlier Claude Code and Codex sessions
-- Split panes keep a conversation beside your files
+- Runs your installed `claude` and `codex` CLIs with your own login
+- PIAgent can read earlier Claude Code and Codex transcripts
+- Split panes let you read files or papers right next to the chat
 
 ![PIAgent's answer naming a Codex session and a Claude Code session, matched by numbers to their rows in Recap](docs/images/recall.webp)
 
 ### Switch models mid-conversation.
 
-Pick any model PIAgent can reach — a Claude, ChatGPT or GitHub Copilot subscription you already pay for, an Anthropic or OpenAI API key, Gemini on your Google Cloud project, or a model on your own server — and keep the same conversation going. Every reply is labelled with the model that wrote it.
+Swap models inside a PIAgent thread without starting over. Use the Claude, ChatGPT, or GitHub Copilot subscriptions you already pay for, plug in Anthropic or OpenAI API keys, connect Gemini through Google Cloud Vertex AI, or point to a server of your own. Each reply tags which model wrote it.
 
-- Subscription logins are shared with the Claude Code and Codex CLIs
-- Set the reasoning effort per conversation
-- Usage rings show how much of your plan is left
+- Reuses your Claude Code and Codex CLI logins
+- Adjust reasoning effort per conversation
+- Usage rings show how much subscription quota you have left
 
 ![One conversation with two replies, one written by a subscription Claude model and one by an API OpenAI model, each labelled](docs/images/models.webp)
 
-### Hand bigger questions to a team.
+### Hand bigger jobs to a team, after you approve the plan.
 
-Ask PIAgent for a team and it drafts a brief: the goal, the scope, the model, the permissions, and when the team must ask you. Nothing runs until you click **Start team**. Then members, messages and results stay with the conversation.
+When a task is too large for a single chat, ask PIAgent to draft a team brief covering the goal, scope, model, permissions, and when to check in with you. Nothing runs until you click **Start team**. Once it starts, every member's messages and outputs stay in the thread.
 
-- Research teams investigate; manuscript teams help you revise your draft
-- Answer a team's questions from the card — or from your phone
-- Every step and result is recorded
+- Separate team types for open-ended research and draft revision
+- Answer a team's questions in the chat card or from your phone
+- Keeps a full log of tasks, messages, and outputs
 
 ![A team brief card listing the goal, scope, model, permissions and when the team asks you, with a Start team button](docs/images/team-brief.webp)
 
-### It can use your browser, too (macOS).
+### Let PIAgent use your Mac browser when you allow it.
 
-With your approval, PIAgent can work in apps on your Mac — for example, fetch a PDF from a publisher page in your own signed-in Chrome, in the background. The conversation shows whenever a desktop connection is active, with a button to stop it.
+Once you approve, PIAgent can work in apps on your Mac in the background, such as grabbing a paper PDF from a publisher page in your signed-in Chrome. A live banner stays visible in the chat with a one-click stop button.
 
-- Approve per turn or per conversation
-- Downloaded PDFs can go straight into your library
+- Approve for a single turn or for the whole conversation
+- Add downloaded PDFs to your paper library
 - macOS only for now
 
 ![PIAgent clicking the PDF button on the ACL Anthology page in Chrome, beside the Research Pilot window](docs/images/computer-use.webp)
 
-### Pick it up on your phone.
+### Check in on a session from your phone.
 
-Pair your phone once and follow or drive the same sessions away from your desk: read replies, send the next message, change the model, follow a team and answer its questions. Your computer does the work; the phone is a window into it.
+Pair your phone once to read replies, send a follow-up, switch models, or unblock a waiting team while you're away from your desk. Everything still runs on your computer; the phone connects to it over Tailscale.
 
-- PIAgent, Claude Code and Codex sessions
-- Notifications when a team needs you
-- Connects over Tailscale; your computer must stay on
+- Works with PIAgent, Claude Code, and Codex sessions
+- Notifications when a team needs your input
+- Private Tailscale connection (your computer needs to stay on)
 
 ![The same PIAgent conversation on the desktop and on a phone, with the newest reply shown on both](docs/images/phone.webp)
 
-### See it in action
+### See how a project comes together
 
-A researcher's week, filmed in the real app.
+A 100-second tour recorded in the actual app.
 
-[![Watch the Research Pilot film on YouTube](docs/images/video-poster.webp)](https://youtu.be/RheGeG1U5no)
+[![Watch the Research Pilot walkthrough on YouTube](docs/images/video-poster.webp)](https://youtu.be/RheGeG1U5no)
 
 ## Download and start
 
@@ -119,10 +119,10 @@ A researcher's week, filmed in the real app.
 
 On macOS, open the DMG and drag Research Pilot into Applications; the app is signed and notarized by Apple. On Ubuntu/Debian, install the downloaded deb with `sudo apt install ./Research-Pilot-0.8.12-linux-amd64.deb` (use the arm64 filename on ARM). AppImages on Ubuntu 24.04 may need `libfuse2t64`; the arm64 AppImage also needs `zlib1g-dev`.
 
-1. **Install** the package for your computer. The app brings its own runtime — no Node.js, Docker or server to set up.
-2. **Connect a model.** Sign in once with the Claude Code or Codex CLI from a terminal (PIAgent shares that login), sign in to GitHub Copilot under **Settings → Subscriptions**, add an Anthropic or OpenAI API key or your own model server under **Settings → API keys & local**, or connect Vertex AI under **Settings → Google Cloud**. On first launch the setup checklist says what is missing; **Settings → Setup** shows it any time.
-3. **Open a project folder.** An existing repository or an empty folder both work. Your files stay where they are; research records live in `~/.pipilot`.
-4. **Ask.** Try: “Explain this project and the research material already saved for it. Suggest one useful next step.”
+1. **Install** the package for your OS. The runtime is bundled, so you don't need to install Node.js, Docker, or a separate server.
+2. **Connect a model.** Sign in once with the Claude Code or Codex CLI from a terminal (PIAgent shares that login), sign in to GitHub Copilot under **Settings → Subscriptions**, add an Anthropic or OpenAI API key or your own model server (such as Ollama or vLLM) under **Settings → API keys & local**, or connect Vertex AI under **Settings → Google Cloud**. On first launch a built-in setup check points out anything missing; **Settings → Setup** reopens it any time.
+3. **Open a project folder.** Pick an existing repository or an empty folder. Your project files stay where they are, and research records live in `~/.pipilot`.
+4. **Ask.** Try asking it to summarize a repo you opened, or find and save recent papers on a question you're starting.
 
 Windows and Intel Macs are not supported yet. Choose a named application package; GitHub's automatic “Source code” archives are a snapshot of this documentation repository, not the application.
 
@@ -136,7 +136,7 @@ Connect another computer through **Settings → Servers** to open its projects f
 
 ### Choose how to work
 
-**The agent is the execution engine.** Claude and Codex run their installed CLIs inside the app. PIAgent runs in a separate bundled process and supports configured model providers and compatible local endpoints. Their available tools and authentication differ; the app does not make them interchangeable.
+**The agent is the execution engine.** Claude and Codex run their installed CLIs inside the app. PIAgent runs in a separate bundled process and supports configured model providers and OpenAI-compatible local endpoints. Their available tools and authentication differ; the app does not make them interchangeable.
 
 **The work mode sets the session's defaults.** Use the workspace mode picker for Collaborator and enable the experimental choices to explore Ideator, Builder, Teacher, or Policy & Records. These emphasize general collaboration, exploring ideas, engineering, teaching, or source-based policy and record work. Modes are built in and cannot be edited; each new session uses the mode's current version. A mode is a starting style, not proof of better answers or a security sandbox.
 
@@ -177,7 +177,7 @@ Desktop and phone sessions launch Claude Code with `--dangerously-skip-permissio
 
 Research data lives under `~/.pipilot` by default. Your documents and code stay in the project folders you choose. Opening a workspace can synchronize integration files under `.agents`, `.claude` and `.pipilot`; your own `AGENTS.md` and `CLAUDE.md` content is preserved.
 
-Local storage does not mean offline processing: model providers, search services and other configured tools receive the requests needed for their work. Credentials, account access and provider charges are configured separately.
+Keep in mind that local storage doesn't mean offline execution: prompts and searches still go to whichever model providers, search APIs, and external tools you configure. Credentials, account access and provider charges are configured separately.
 
 Before upgrading, finish active work and quit the app. Replace the application, then reopen it so both the app and bundled services use the new version. Keep a backup of `~/.pipilot` and your project folders; do not delete research data as an upgrade step.
 
@@ -187,4 +187,4 @@ Before upgrading, finish active work and quit the app. Replace the application, 
 - [What changed in 0.8.12](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.12) · [All releases](https://github.com/daidong/DIR-Agent/releases)
 - [Issues](https://github.com/daidong/DIR-Agent/issues) — include app version, OS, CPU, package type and reproduction steps. Remove credentials and private research from diagnostics before sharing.
 
-This public repository hosts application packages, documentation and community issues. The application source is maintained separately. Claude Code, Codex, ChatGPT, GitHub Copilot and other names belong to their owners; Research Pilot is not affiliated with Anthropic, OpenAI, Google or GitHub.
+This public repository hosts application packages, documentation and community issues. The application source is maintained separately. Claude Code, Codex, ChatGPT, GitHub Copilot, Google Cloud and other names belong to their owners; Research Pilot is not affiliated with Anthropic, OpenAI, Google or GitHub.
