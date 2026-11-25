@@ -1,4 +1,4 @@
-# Install and configure Research Pilot 0.8.13
+# Install and configure Research Pilot 0.8.14
 
 [Back to the product overview](../README.md)
 
@@ -6,13 +6,13 @@ Use only the sections relevant to your setup. PI Agent, Claude Code and Codex ar
 
 ## 1. Choose the right download
 
-The filenames and direct links below are for **0.8.13**. For later releases, use the [latest release page](https://github.com/daidong/DIR-Agent/releases/latest) and substitute that version in the commands.
+The filenames and direct links below are for **0.8.14**. For later releases, use the [latest release page](https://github.com/daidong/DIR-Agent/releases/latest) and substitute that version in the commands.
 
 | Your computer | Recommended download | Alternative |
 |---|---|---|
-| macOS, Apple Silicon (M-series) | [mac-arm64.dmg](https://github.com/daidong/DIR-Agent/releases/download/v0.8.13/Research-Pilot-0.8.13-mac-arm64.dmg) | [mac-arm64.zip](https://github.com/daidong/DIR-Agent/releases/download/v0.8.13/Research-Pilot-0.8.13-mac-arm64.zip) |
-| Ubuntu/Debian, Intel or AMD 64-bit | [linux-amd64.deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.13/Research-Pilot-0.8.13-linux-amd64.deb) | [linux-x86_64.AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.13/Research-Pilot-0.8.13-linux-x86_64.AppImage) |
-| Ubuntu/Debian, ARM 64-bit | [linux-arm64.deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.13/Research-Pilot-0.8.13-linux-arm64.deb) | [linux-arm64.AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.13/Research-Pilot-0.8.13-linux-arm64.AppImage) |
+| macOS, Apple Silicon (M-series) | [mac-arm64.dmg](https://github.com/daidong/DIR-Agent/releases/download/v0.8.14/Research-Pilot-0.8.14-mac-arm64.dmg) | [mac-arm64.zip](https://github.com/daidong/DIR-Agent/releases/download/v0.8.14/Research-Pilot-0.8.14-mac-arm64.zip) |
+| Ubuntu/Debian, Intel or AMD 64-bit | [linux-amd64.deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.14/Research-Pilot-0.8.14-linux-amd64.deb) | [linux-x86_64.AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.14/Research-Pilot-0.8.14-linux-x86_64.AppImage) |
+| Ubuntu/Debian, ARM 64-bit | [linux-arm64.deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.14/Research-Pilot-0.8.14-linux-arm64.deb) | [linux-arm64.AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.14/Research-Pilot-0.8.14-linux-arm64.AppImage) |
 
 **Not sure about your CPU?** On macOS, open **Apple menu → About This Mac** and look at **Chip**. On Linux, run:
 
@@ -23,15 +23,15 @@ uname -m
 - `x86_64`: use the **amd64 deb** or **x86_64 AppImage**. These names describe the same CPU architecture.
 - `aarch64` or `arm64`: use **arm64**.
 
-**Windows is not supported.** Version 0.8.13 also does not include an Intel Mac installer. Linux installation checks were performed on Ubuntu 24.04; other distributions may need different system packages. A Linux graphical desktop session is needed for the desktop UI.
+**Windows is not supported.** Version 0.8.14 also does not include an Intel Mac installer. Linux installation checks were performed on Ubuntu 24.04; other distributions may need different system packages. A Linux graphical desktop session is needed for the desktop UI.
 
-On the release page, choose one of the six **`Research-Pilot-0.8.13-…`** assets listed above. GitHub's automatic **Source code (zip)** and **Source code (tar.gz)** entries contain the public documentation snapshot for this release; they do not contain the application source or an installer.
+On the release page, choose one of the six **`Research-Pilot-0.8.14-…`** assets listed above. GitHub's automatic **Source code (zip)** and **Source code (tar.gz)** entries contain the public documentation snapshot for this release; they do not contain the application source or an installer.
 
 ## 2. Install Research Pilot
 
 ### macOS: Apple Silicon
 
-1. Download `Research-Pilot-0.8.13-mac-arm64.dmg`.
+1. Download `Research-Pilot-0.8.14-mac-arm64.dmg`.
 2. Double-click the dmg to open it.
 3. Drag **Research Pilot** into **Applications**.
 4. Eject the mounted disk image.
@@ -50,7 +50,7 @@ For **x86_64 / amd64**:
 ```bash
 cd ~/Downloads
 sudo apt update
-sudo apt install ./Research-Pilot-0.8.13-linux-amd64.deb
+sudo apt install ./Research-Pilot-0.8.14-linux-amd64.deb
 ```
 
 For **arm64**:
@@ -58,7 +58,7 @@ For **arm64**:
 ```bash
 cd ~/Downloads
 sudo apt update
-sudo apt install ./Research-Pilot-0.8.13-linux-arm64.deb
+sudo apt install ./Research-Pilot-0.8.14-linux-arm64.deb
 ```
 
 Use **one** of these blocks. Keep the `./` before the filename: it tells apt to install the downloaded local file. Using apt also resolves the declared system dependencies.
@@ -91,22 +91,22 @@ sudo apt update
 sudo apt install libfuse2t64 zlib1g-dev
 ```
 
-On older Ubuntu releases, the FUSE package is named `libfuse2` rather than `libfuse2t64`. The 0.8.13 arm64 AppImage additionally requires `zlib1g-dev` because its bundled runtime looks for `libz.so`; installing `zlib1g` alone does not provide that filename.
+On older Ubuntu releases, the FUSE package is named `libfuse2` rather than `libfuse2t64`. The 0.8.14 arm64 AppImage additionally requires `zlib1g-dev` because its bundled runtime looks for `libz.so`; installing `zlib1g` alone does not provide that filename.
 
 Then make the downloaded file executable and run it. For **x86_64**:
 
 ```bash
 cd ~/Downloads
-chmod +x Research-Pilot-0.8.13-linux-x86_64.AppImage
-./Research-Pilot-0.8.13-linux-x86_64.AppImage
+chmod +x Research-Pilot-0.8.14-linux-x86_64.AppImage
+./Research-Pilot-0.8.14-linux-x86_64.AppImage
 ```
 
 For **arm64**:
 
 ```bash
 cd ~/Downloads
-chmod +x Research-Pilot-0.8.13-linux-arm64.AppImage
-./Research-Pilot-0.8.13-linux-arm64.AppImage
+chmod +x Research-Pilot-0.8.14-linux-arm64.AppImage
+./Research-Pilot-0.8.14-linux-arm64.AppImage
 ```
 
 If startup fails specifically because of Chromium's sandbox on Ubuntu 24.04, prefer the deb. An AppImage fallback is to append `--no-sandbox` to the launch command; this disables Chromium's sandbox for that launch.
@@ -114,7 +114,7 @@ If startup fails specifically because of Chromium's sandbox on Ubuntu 24.04, pre
 If FUSE is unavailable, you can extract the AppImage and run its contents. For example, in a directory where you want to keep the application:
 
 ```bash
-/path/to/Research-Pilot-0.8.13-linux-arm64.AppImage --appimage-extract
+/path/to/Research-Pilot-0.8.14-linux-arm64.AppImage --appimage-extract
 ./squashfs-root/research-pilot
 ```
 
@@ -154,9 +154,9 @@ Choose a sign-in method offered by the CLI and finish authentication. Once it wo
 
 ### Built-in PI agent
 
-The **PIAgent** tab uses a runtime bundled with Research Pilot, so it does not need a separate PI executable. PIAgent can use a supported local Claude/Codex login or GitHub Copilot (**Settings → Subscriptions**), an Anthropic or OpenAI API key or your own model server (**Settings → API keys & local**), or Gemini models on your Google Cloud project (**Settings → Google Cloud**). Choose the default model under **Settings → Models**. Available models depend on your configuration and account access.
+The **PIAgent** tab uses a runtime bundled with Research Pilot, so it does not need a separate PI executable. PIAgent can use a supported local Claude/Codex login or GitHub Copilot (**Settings → Claude**, **ChatGPT** or **GitHub Copilot**), an Anthropic, OpenAI or Gemini API key (**Settings → Anthropic API**, **OpenAI API** or **Gemini API**), or Gemini models on your Google Cloud project (**Settings → Google Cloud**). Each of these pages lists the models it offers; the ones you tick appear in the model pickers. Choose the default model under **Settings → Models**. Available models depend on your configuration and account access.
 
-**Settings → Subscriptions** also provides supported Claude Code and Codex CLI installation, update and sign-in actions.
+**Settings → Claude** and **Settings → ChatGPT** also provide Claude Code and Codex CLI installation, update and sign-in actions.
 
 For teams on Linux, install `bubblewrap` (`sudo apt install bubblewrap` on Ubuntu/Debian). Team shell execution requires working OS isolation; it is refused when isolation cannot be established. Installing the package alone may not satisfy restrictions imposed by your distribution or container.
 
@@ -236,14 +236,14 @@ Without this key, PI's `web_search` reports that general web search is unavailab
 
 #### Model-provider credentials for PI Agent
 
-PI Agent also needs access to a language model. If **Settings → Subscriptions** shows a supported local Claude/Codex login or GitHub Copilot sign-in that works with your selected model, you can use that authentication. Otherwise, configure **one** of the options below and choose an available model under **Settings → Models**.
+PI Agent also needs access to a language model. If **Settings → Claude**, **ChatGPT** or **GitHub Copilot** shows a supported local Claude/Codex login or GitHub Copilot sign-in that works with your selected model, you can use that authentication. Otherwise, configure **one** of the options below and choose an available model under **Settings → Models**.
 
 | Model family | Where to configure | Get access |
 | --- | --- | --- |
-| Claude | **Settings → API keys & local → Anthropic API key** (`ANTHROPIC_API_KEY`) | [Anthropic Console keys](https://console.anthropic.com/settings/keys); [API setup documentation](https://platform.claude.com/docs/en/api/overview). |
-| OpenAI | **Settings → API keys & local → OpenAI API key** (`OPENAI_API_KEY`) | [OpenAI API keys](https://platform.openai.com/api-keys); use a standard application API key as described in the [API authentication documentation](https://developers.openai.com/api/reference/overview#authentication). |
+| Claude | **Settings → Anthropic API** (`ANTHROPIC_API_KEY`) | [Anthropic Console keys](https://console.anthropic.com/settings/keys); [API setup documentation](https://platform.claude.com/docs/en/api/overview). |
+| OpenAI | **Settings → OpenAI API** (`OPENAI_API_KEY`) | [OpenAI API keys](https://platform.openai.com/api-keys); use a standard application API key as described in the [API authentication documentation](https://developers.openai.com/api/reference/overview#authentication). |
 | Gemini (Vertex AI) | **Settings → Google Cloud**: enter your Cloud project and choose its Gemini chat models. No key is stored; the app uses Application Default Credentials. | Install the [gcloud CLI](https://cloud.google.com/sdk/docs/install), run `gcloud auth application-default login`, and enable the Vertex AI API on the project. Charges go to that project. |
-| Your own server | **Settings → API keys & local**: add an OpenAI-compatible endpoint (for example Ollama, vLLM or LM Studio) | Your server's documentation. |
+| Gemini (API key) | **Settings → Gemini API** (`GOOGLE_API_KEY`) | A key from [Google AI Studio](https://aistudio.google.com/apikey). |
 
 Click **Save**, select a model available to your account, and try a short PI conversation. Configure standalone Claude Code or Codex authentication using the CLI instructions in section 3. Literature-source keys do not authenticate a language model, and a model-provider key does not enable Brave Search.
 
