@@ -6,10 +6,10 @@
 Run Claude Code, Codex, and the built-in PIAgent side by side. What you read and decide stays attached to the project, with sources you can check long after the chat is closed.</p>
 
 <p align="center">
-<a href="https://github.com/daidong/DIR-Agent/releases/tag/v0.8.14"><strong>Download 0.8.14</strong></a> ·
+<a href="https://github.com/daidong/DIR-Agent/releases/tag/v0.8.15"><strong>Download 0.8.15</strong></a> ·
 <a href="https://daidong.github.io/DIR-Agent/">Website</a> ·
 <a href="https://youtu.be/RheGeG1U5no">Watch the demo</a> ·
-<a href="https://github.com/daidong/DIR-Agent/releases/tag/v0.8.14">Release notes</a> ·
+<a href="https://github.com/daidong/DIR-Agent/releases/tag/v0.8.15">Release notes</a> ·
 <a href="https://github.com/daidong/DIR-Agent/issues">Report a problem</a>
 </p>
 
@@ -22,15 +22,16 @@ Works with Claude and ChatGPT subscriptions, GitHub Copilot, Anthropic and OpenA
 
 **A new terminal shouldn't mean starting from scratch.** Jump between Claude Code, Codex, and a pile of PDFs, and context scatters fast. Research Pilot connects every agent on a project to the same saved papers, Paper Wiki, and past decisions, with dates and links back to where each note came from.
 
-## New in 0.8.14
+## New in 0.8.15
 
-- **Starting after an upgrade from an old version.** A package installed by hand over a release older than 0.8.3 could fail to start with "PROTOCOL_UNSUPPORTED: Unsupported daemon protocol undefined", because the old version's data service was still running. Research Pilot now asks before it starts whether to restart the services; choose **Restart Services**.
-- **One Settings page per model source.** Subscriptions (Claude, ChatGPT, GitHub Copilot, Google Cloud) and API keys (Anthropic, OpenAI, Gemini) each have their own page with the models they offer. Gemini 4 Neon and Hydrogen offer **Extra high** reasoning. Self-hosted model servers are hidden for now.
-- **Documents read better.** Wide images and tables fit the editor, formulas that start with a digit render, a short list of HTML tags renders everywhere, and the file viewer's buttons stay inside a narrow pane.
-- **Clearer PIAgent steps.** Tool calls and thoughts form one list in order, and sub-agents show what they are doing while they run.
-- **From 0.8.14,** click **Update** at the top right. **From 0.8.12 or earlier,** install 0.8.14 once by hand (see [Upgrade](docs/installation.md#upgrade-an-existing-installation)); later versions arrive through the Update button.
+- **Finished background tasks continue the conversation.** When a background command or Compute run that PIAgent started ends after its last reply, PIAgent picks up the result on its own instead of waiting for your next message. Running tasks appear as a label in the message box's control row, and a conversation that is still working shows a blinking dot on its tab.
+- **Paper Wiki pages without Claude Code or Codex.** **Generate** in the Literature tab now writes wiki pages with the built-in PIAgent, using the provider of your default model in Settings, so it works with any subscription or API key you have connected.
+- **Search in any language.** Search over notes, memories, the Paper Wiki and past sessions now indexes Chinese, Japanese, Korean and other non-English text, not only English words.
+- **Retired memories in one place.** The Knowledge tab can list only the notes and memories that were replaced or archived, with the reason for each.
+- **Gemini on Vertex AI no longer times out on large edits.** Gemini 3 and later stream a tool call's arguments as they are written, so writing a large file no longer leaves the connection silent until it is cut off.
+- **From 0.8.13 or later,** click **Update** at the top right. **From 0.8.12 or earlier,** install 0.8.15 once by hand (see [Upgrade](docs/installation.md#upgrade-an-existing-installation)); later versions arrive through the Update button.
 
-[Full release notes](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.14)
+[Full release notes](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.15)
 
 ## What it does
 
@@ -114,11 +115,11 @@ A 100-second tour recorded in the actual app.
 
 | Computer | Recommended package | Alternative |
 | --- | --- | --- |
-| macOS · Apple Silicon (M1 or later) | [DMG](https://github.com/daidong/DIR-Agent/releases/download/v0.8.14/Research-Pilot-0.8.14-mac-arm64.dmg) | [ZIP](https://github.com/daidong/DIR-Agent/releases/download/v0.8.14/Research-Pilot-0.8.14-mac-arm64.zip) |
-| Ubuntu/Debian · Intel / AMD 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.14/Research-Pilot-0.8.14-linux-amd64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.14/Research-Pilot-0.8.14-linux-x86_64.AppImage) |
-| Ubuntu/Debian · ARM 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.14/Research-Pilot-0.8.14-linux-arm64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.14/Research-Pilot-0.8.14-linux-arm64.AppImage) |
+| macOS · Apple Silicon (M1 or later) | [DMG](https://github.com/daidong/DIR-Agent/releases/download/v0.8.15/Research-Pilot-0.8.15-mac-arm64.dmg) | [ZIP](https://github.com/daidong/DIR-Agent/releases/download/v0.8.15/Research-Pilot-0.8.15-mac-arm64.zip) |
+| Ubuntu/Debian · Intel / AMD 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.15/Research-Pilot-0.8.15-linux-amd64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.15/Research-Pilot-0.8.15-linux-x86_64.AppImage) |
+| Ubuntu/Debian · ARM 64-bit | [deb](https://github.com/daidong/DIR-Agent/releases/download/v0.8.15/Research-Pilot-0.8.15-linux-arm64.deb) | [AppImage](https://github.com/daidong/DIR-Agent/releases/download/v0.8.15/Research-Pilot-0.8.15-linux-arm64.AppImage) |
 
-On macOS, open the DMG and drag Research Pilot into Applications; the app is signed and notarized by Apple. On Ubuntu/Debian, install the downloaded deb with `sudo apt install ./Research-Pilot-0.8.14-linux-amd64.deb` (use the arm64 filename on ARM). AppImages on Ubuntu 24.04 may need `libfuse2t64`; the arm64 AppImage also needs `zlib1g-dev`.
+On macOS, open the DMG and drag Research Pilot into Applications; the app is signed and notarized by Apple. On Ubuntu/Debian, install the downloaded deb with `sudo apt install ./Research-Pilot-0.8.15-linux-amd64.deb` (use the arm64 filename on ARM). AppImages on Ubuntu 24.04 may need `libfuse2t64`; the arm64 AppImage also needs `zlib1g-dev`.
 
 1. **Install** the package for your OS. The runtime is bundled, so you don't need to install Node.js, Docker, or a separate server.
 2. **Connect a model.** Sign in once with the Claude Code or Codex CLI from a terminal (PIAgent shares that login), sign in to GitHub Copilot under **Settings → GitHub Copilot**, add an API key under **Settings → Anthropic API**, **OpenAI API** or **Gemini API**, or connect Vertex AI under **Settings → Google Cloud**. On first launch a built-in setup check points out anything missing; **Settings → Setup** reopens it any time.
@@ -185,7 +186,7 @@ From 0.8.13 on, new versions arrive through the **Update** button at the top rig
 ## Help
 
 - [Installation, configuration and troubleshooting](docs/installation.md)
-- [What changed in 0.8.14](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.14) · [All releases](https://github.com/daidong/DIR-Agent/releases)
+- [What changed in 0.8.15](https://github.com/daidong/DIR-Agent/releases/tag/v0.8.15) · [All releases](https://github.com/daidong/DIR-Agent/releases)
 - [Issues](https://github.com/daidong/DIR-Agent/issues) — include app version, OS, CPU, package type and reproduction steps. Remove credentials and private research from diagnostics before sharing.
 
 This public repository hosts application packages, documentation and community issues. The application source is maintained separately. Claude Code, Codex, ChatGPT, GitHub Copilot, Google Cloud and other names belong to their owners; Research Pilot is not affiliated with Anthropic, OpenAI, Google or GitHub.
